@@ -1,0 +1,256 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tangerine_bank_sync
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 13:28+0000\n"
+"PO-Revision-Date: 2026-10-11 13:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.constraint,message:tangerine_bank_sync.constraint_vn_bank_code_unique
+msgid "A bank with this code already exists."
+msgstr "Đã có ngân hàng với mã này."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_vn_bank__short_name
+msgid "Abbreviated bank name from the VietQR directory."
+msgstr "Tên ngân hàng viết tắt từ danh mục VietQR."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_form
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_account_setup_bank_manual_config__bank_bic
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_partner_bank__bank_bic
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__bic
+msgid "BIC/SWIFT"
+msgstr "BIC/SWIFT"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__bin
+msgid "BIN"
+msgstr "BIN"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_form
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_kanban
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_search
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. module: tangerine_bank_sync
+#: model:ir.model,name:tangerine_bank_sync.model_res_partner_bank
+msgid "Bank Account"
+msgstr "Tài khoản ngân hàng"
+
+#. module: tangerine_bank_sync
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_bank_accounts
+msgid "Bank Accounts"
+msgstr "Tài khoản Ngân hàng"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_vn_bank__bin
+msgid "Bank Identification Number used for VietQR / NAPAS routing."
+msgstr "Mã định danh ngân hàng dùng để định tuyến VietQR / NAPAS."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_account_setup_bank_manual_config__bank_bic
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_partner_bank__bank_bic
+msgid ""
+"Bank Identifier Code for international wires in the format Bank Code (4 "
+"letters) + Country Code (2 letters) + Location Code (2 letters/numbers) + "
+"Optional Branch Code (3 letters/numbers)."
+msgstr ""
+"Mã định danh ngân hàng dùng cho chuyển khoản quốc tế, theo định dạng Mã ngân"
+" hàng (4 chữ cái) + Mã quốc gia (2 chữ cái) + Mã địa điểm (2 chữ cái/số) + "
+"Mã chi nhánh tùy chọn (3 chữ cái/số)."
+
+#. module: tangerine_bank_sync
+#: model:ir.module.module,shortdesc:base.module_tangerine_bank_sync
+msgid "Bank Information Vietnam"
+msgstr "Thông tin ngân hàng Việt Nam"
+
+#. module: tangerine_bank_sync
+#: model:ir.actions.server,name:tangerine_bank_sync.ir_cron_sync_bank_VN_ir_actions_server
+msgid "Bank Information Vietnam Synchronous"
+msgstr "Đồng bộ thông tin ngân hàng Việt Nam"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_account_setup_bank_manual_config__bank_name
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_partner_bank__bank_name
+msgid "Bank Name"
+msgstr "Tên ngân hàng"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_account_setup_bank_manual_config__vn_bank_id
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_partner_bank__vn_bank_id
+msgid ""
+"Bank of the VietQR directory. It fills the bank name and BIC, and provides "
+"the NAPAS BIN used in VietQR payment codes."
+msgstr ""
+"Ngân hàng trong danh bạ VietQR. Trường này điền tên ngân hàng và BIC, đồng "
+"thời cung cấp mã BIN NAPAS dùng trong mã thanh toán VietQR."
+
+#. module: tangerine_bank_sync
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_banking
+msgid "Banking"
+msgstr "Nghiệp vụ ngân hàng"
+
+#. module: tangerine_bank_sync
+#: model:ir.actions.act_window,name:tangerine_bank_sync.action_vn_bank
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_banks
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_list
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_search
+msgid "Banks"
+msgstr "Ngân hàng"
+
+#. module: tangerine_bank_sync
+#. odoo-python
+#: code:addons/tangerine_bank_sync/models/res_partner_bank.py:0
+msgid ""
+"Can't generate a Vietnamese QR banking code with a currency other than VND."
+msgstr "Không thể tạo mã QR ngân hàng Việt Nam với loại tiền khác VND."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__code
+msgid "Code"
+msgstr "Mã số"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_kanban
+msgid "Code:"
+msgstr "Mã:"
+
+#. module: tangerine_bank_sync
+#. odoo-python
+#: code:addons/tangerine_bank_sync/models/vn_bank.py:0
+msgid "Could not synchronize bank information: %s"
+msgstr "Không thể đồng bộ thông tin ngân hàng: %s"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.actions.act_window,help:tangerine_bank_sync.action_vn_bank
+msgid "Create a new bank"
+msgstr "Tạo ngân hàng mới"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_partner_bank__display_name
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_partner_bank__id
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__id
+msgid "ID"
+msgstr "ID"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_kanban
+msgid "Logo"
+msgstr "Logo"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__logo_url
+msgid "Logo URL"
+msgstr "URL logo"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_vn_bank__bic
+msgid "SWIFT code of the bank, used for international wires."
+msgstr "Mã SWIFT của ngân hàng, dùng cho chuyển khoản quốc tế."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_vn_bank__short_name
+msgid "Short Name"
+msgstr "Tên viết tắt"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_vn_bank__code
+msgid "Short bank code from the VietQR directory (e.g. VCB, TCB)."
+msgstr "Mã ngân hàng ngắn từ danh mục VietQR (ví dụ: VCB, TCB)."
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_kanban
+msgid "Swift:"
+msgstr "Swift:"
+
+#. module: tangerine_bank_sync
+#: model:ir.actions.server,name:tangerine_bank_sync.action_server_bank_information_sync
+msgid "Sync from VietQR"
+msgstr "Đồng bộ từ VietQR"
+
+#. module: tangerine_bank_sync
+#: model:ir.module.module,summary:base.module_tangerine_bank_sync
+msgid ""
+"Synchronize Vietnamese banking information (BIN, BIC, logo) via the VietQR "
+"API and feed the BIN to VietQR payment codes."
+msgstr ""
+"Đồng bộ thông tin ngân hàng Việt Nam (BIN, BIC, logo) qua API VietQR và đưa "
+"mã BIN vào mã thanh toán VietQR."
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_vn_bank__logo_url
+msgid "URL of the bank logo from the VietQR directory."
+msgstr "URL logo ngân hàng từ danh mục VietQR."
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.actions.act_window,help:tangerine_bank_sync.action_vn_bank
+msgid "Use \"Sync from VietQR\" in the Actions menu to load the Vietnamese banks."
+msgstr ""
+"Dùng \"Đồng bộ từ VietQR\" trong menu Hành động để tải danh sách ngân hàng "
+"Việt Nam."
+
+#. module: tangerine_bank_sync
+#: model:ir.model,name:tangerine_bank_sync.model_vn_bank
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_account_setup_bank_manual_config__vn_bank_id
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_partner_bank__vn_bank_id
+msgid "Vietnamese Bank"
+msgstr "Ngân hàng Việt Nam"
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.vn_bank_view_form
+msgid "e.g. Vietcombank"
+msgstr "VD: Vietcombank"
