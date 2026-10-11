@@ -16,7 +16,7 @@
     <menuitem id="menu_banks"
               name="Banks"
               parent="menu_banking"
-              action="base.action_res_bank_form"
+              action="action_vn_bank"
               sequence="10"/>
 
     <menuitem id="menu_bank_accounts"

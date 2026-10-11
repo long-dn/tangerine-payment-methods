@@ -23,7 +23,7 @@ class _FakeResponse:
 class TestBankInfo(TransactionCase):
 
     def test_payload_mapping(self):
-        payload = self.env['res.bank']._payload_bank({
+        payload = self.env['vn.bank']._payload_bank({
             'name': 'Vietcombank',
             'bin': '970436',
             'shortName': 'VCB',
@@ -36,30 +36,50 @@ class TestBankInfo(TransactionCase):
         self.assertEqual(payload['code'], 'VCB')
 
     def test_display_name_with_code(self):
-        bank = self.env['res.bank'].create({'name': 'My Bank', 'code': 'MBX'})
+        bank = self.env['vn.bank'].create({'name': 'My Bank', 'code': 'MBX'})
         self.assertEqual(bank.display_name, '[MBX] My Bank')
 
     def test_display_name_without_code(self):
-        bank = self.env['res.bank'].create({'name': 'BNP Paribas'})
+        bank = self.env['vn.bank'].create({'name': 'BNP Paribas'})
         self.assertEqual(bank.display_name, 'BNP Paribas')
 
     def test_search_display_name_by_code(self):
-        # Regression: m2o autocomplete must find a bank by its VietQR code even
-        # when neither the name nor the BIC contains the term. Core res.bank's
-        # _search_display_name matches only bic (prefix) + name and ignores code.
-        bank = self.env['res.bank'].create({
+        # m2o autocomplete must find a bank by its VietQR code even when
+        # neither the name nor the BIC contains the term.
+        bank = self.env['vn.bank'].create({
             'name': 'Foreign Trade Bank',
-            'code': 'VCB',
+            'code': 'VCBZ',
             'bic': 'BFTVVNVX',
         })
-        ids = [r[0] for r in self.env['res.bank'].name_search('vcb')]
+        ids = [r[0] for r in self.env['vn.bank'].name_search('vcbz')]
         self.assertIn(bank.id, ids)
 
     def test_search_display_name_by_bic_substring(self):
-        # BIC is matched as a substring (core only matches a BIC prefix).
-        bank = self.env['res.bank'].create({'name': 'Some Bank', 'bic': 'ZZBFTVVN'})
-        ids = [r[0] for r in self.env['res.bank'].name_search('bftv')]
+        bank = self.env['vn.bank'].create({'name': 'Some Bank', 'bic': 'ZZBFTVVN'})
+        ids = [r[0] for r in self.env['vn.bank'].name_search('bftv')]
         self.assertIn(bank.id, ids)
+
+    def test_bank_account_takes_name_and_bic_from_the_directory(self):
+        bank = self.env['vn.bank'].create({
+            'name': 'Vietcombank', 'code': 'VCBY', 'bin': '970436', 'bic': 'BFTVVNVX',
+        })
+        account = self.env['res.partner.bank'].create({
+            'account_number': '0011002233',
+            'partner_id': self.env.ref('base.main_partner').id,
+            'vn_bank_id': bank.id,
+        })
+        self.assertEqual(account.bank_name, 'Vietcombank')
+        self.assertEqual(account.bank_bic, 'BFTVVNVX')
+
+    def test_bank_account_without_directory_bank_keeps_its_values(self):
+        account = self.env['res.partner.bank'].create({
+            'account_number': '0011002244',
+            'partner_id': self.env.ref('base.main_partner').id,
+            'bank_name': 'Foreign Bank',
+            'bank_bic': 'FOREIGNXX',
+        })
+        self.assertEqual(account.bank_name, 'Foreign Bank')
+        self.assertEqual(account.bank_bic, 'FOREIGNXX')
 
     def test_sync_creates_then_updates(self):
         first = [{
@@ -67,8 +87,8 @@ class TestBankInfo(TransactionCase):
             'logo': 'l1', 'code': 'BANK1', 'swift_code': 'B1SWIFT',
         }]
         with patch.object(requests, 'get', return_value=_FakeResponse(first)):
-            self.env['res.bank'].bank_information_sync()
-        bank = self.env['res.bank'].search([('code', '=', 'BANK1')])
+            self.env['vn.bank'].bank_information_sync()
+        bank = self.env['vn.bank'].search([('code', '=', 'BANK1')])
         self.assertEqual(len(bank), 1)
         self.assertEqual(bank.bic, 'B1SWIFT')
         self.assertEqual(bank.short_name, 'B1')
@@ -78,13 +98,13 @@ class TestBankInfo(TransactionCase):
             'logo': 'l1', 'code': 'BANK1', 'swift_code': 'B1SWIFT',
         }]
         with patch.object(requests, 'get', return_value=_FakeResponse(updated)):
-            self.env['res.bank'].bank_information_sync()
-        bank = self.env['res.bank'].search([('code', '=', 'BANK1')])
+            self.env['vn.bank'].bank_information_sync()
+        bank = self.env['vn.bank'].search([('code', '=', 'BANK1')])
         self.assertEqual(len(bank), 1, "Sync must upsert, not duplicate")
         self.assertEqual(bank.name, 'Bank One Renamed')
 
-    @mute_logger('odoo.addons.tangerine_bank_sync.models.res_bank')
+    @mute_logger('odoo.addons.tangerine_bank_sync.models.vn_bank')
     def test_sync_network_error_raises_usererror(self):
         with patch.object(requests, 'get', side_effect=requests.RequestException('boom')):
             with self.assertRaises(UserError):
-                self.env['res.bank'].bank_information_sync()
+                self.env['vn.bank'].bank_information_sync()

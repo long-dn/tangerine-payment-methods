@@ -22,9 +22,9 @@ class TestBankVietQr(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.bank = cls.env['res.bank'].create({
+        cls.bank = cls.env['vn.bank'].create({
             'name': 'Vietcombank',
-            'code': 'VCB',
+            'code': 'VCBTEST',
             'bin': '970436',
             'bic': 'BFTVVNVX',
         })
@@ -34,8 +34,8 @@ class TestBankVietQr(TransactionCase):
             'country_id': cls.env.ref('base.vn').id,
         })
         cls.bank_account = cls.env['res.partner.bank'].create({
-            'acc_number': '1234567890',
-            'bank_id': cls.bank.id,
+            'account_number': '1234567890',
+            'vn_bank_id': cls.bank.id,
             'partner_id': cls.partner.id,
             'proxy_type': 'bank_acc',
             'proxy_value': '1234567890',
@@ -57,7 +57,7 @@ class TestBankVietQr(TransactionCase):
         self.assertEqual(self._qr_vals(), QR_WITH_BIC)
 
     def test_qr_allowed_without_bic(self):
-        self.bank.bic = False
+        self.bank_account.bank_bic = False
         self.assertFalse(self.bank_account._get_error_messages_for_qr('emv_qr', self.partner, self.vnd))
         self.assertEqual(self._qr_vals(), QR_WITH_BIN)
 

@@ -5,13 +5,15 @@
     'website': 'https://github.com/long-dn',
     'support': 'odoo.tangerine@gmail.com',
     'category': 'Accounting',
-    'version': '19.0.2.0.0',
+    'version': '20.0.2.0.0',
     'license': 'LGPL-3',
     'depends': ['account', 'l10n_vn'],
     'data': [
+        'security/ir.access.csv',
         'data/ir_cron.xml',
         'data/ir_actions_server.xml',
-        'views/res_bank_views.xml',
+        'views/vn_bank_views.xml',
+        'views/res_partner_bank_views.xml',
         'views/bank_menus.xml',
     ],
     'assets': {

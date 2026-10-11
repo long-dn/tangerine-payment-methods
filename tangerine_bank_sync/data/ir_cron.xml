@@ -5,7 +5,7 @@
             <field name="name">Bank Information Vietnam Synchronous</field>
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
-            <field name="model_id" ref="model_res_bank"/>
+            <field name="model_id" ref="model_vn_bank"/>
             <field name="code">model.bank_information_sync()</field>
             <field name="state">code</field>
             <field name="active" eval="False"/>

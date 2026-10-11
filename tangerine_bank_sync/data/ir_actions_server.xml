@@ -3,8 +3,8 @@
     <!-- Manual refresh of the bank directory, reachable from the Actions menu. -->
     <record id="action_server_bank_information_sync" model="ir.actions.server">
         <field name="name">Sync from VietQR</field>
-        <field name="model_id" ref="base.model_res_bank"/>
-        <field name="binding_model_id" ref="base.model_res_bank"/>
+        <field name="model_id" ref="model_vn_bank"/>
+        <field name="binding_model_id" ref="model_vn_bank"/>
         <field name="binding_view_types">list,form</field>
         <field name="group_ids" eval="[Command.link(ref('base.group_partner_manager'))]"/>
         <field name="state">code</field>

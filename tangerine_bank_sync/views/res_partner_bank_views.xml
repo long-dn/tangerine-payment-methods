@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_bank_form_inherit_tangerine_bank_sync" model="ir.ui.view">
+        <field name="name">res.partner.bank.form.inherit.tangerine.bank.sync</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="bank_bic" position="before">
+                <field name="vn_bank_id" options="{'no_create': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_bank_tree_inherit_tangerine_bank_sync" model="ir.ui.view">
+        <field name="name">res.partner.bank.list.inherit.tangerine.bank.sync</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="arch" type="xml">
+            <field name="bank_name" position="before">
+                <field name="vn_bank_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>
