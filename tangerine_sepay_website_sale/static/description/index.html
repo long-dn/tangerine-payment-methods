@@ -9,51 +9,34 @@
    <div class="container">
        <div class="d-flex flex-column justify-content-center align-items-center">
            <h3 class="mb-3" style="font-size: 32px; color: #FFBD59;">
-               <span style="font-weight: 700;">SePay Integration</span>
+               <span style="font-weight: 700;">SePay on Website</span>
            </h3>
            <p style="color: #777; font-size: 18px; letter-spacing: 1px;" class="text-center">
-                 The SePay Integration Module for Odoo enables instant payment authentication via SePay's payment webhook. Automatic payment QR generation, transaction history recording, etc.
+               Let eCommerce customers pay their order by scanning a SePay VietQR code. The order is confirmed and paid as soon as SePay reports the transfer.
            </p>
+           <div class="d-flex flex-wrap justify-content-center"><span class="badge rounded-pill me-2 mb-2" style="background-color: #FFBD59; font-size: 14px; font-weight: 500;">Odoo 20.0</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #FFBD59; font-size: 14px; font-weight: 500;">eCommerce</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #FFBD59; font-size: 14px; font-weight: 500;">VietQR</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #FFBD59; font-size: 14px; font-weight: 500;">LGPL-3</span></div>
        </div>
    </div>
 </section>
 <section class="mb-5">
     <div class="container">
-        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-center" role="tablist">
             <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
-                <a class="nav-link active"
-                   id="features-tab"
-                   role="tab"
-                   href="#features"
-                   aria-controls="features"
-                   data-bs-toggle="tab"
-                   aria-selected="true"
-                   style="color: #FFBD59">Features</a>
+                <a class="nav-link active" id="features-tab" role="tab" href="#features" aria-controls="features"
+                   data-bs-toggle="tab" aria-selected="true" style="color: #FFBD59">Features</a>
             </li>
             <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
-                <a class="nav-link"
-                   id="guidelines-tab"
-                   role="tab"
-                   href="#guidelines"
-                   aria-controls="guidelines"
-                   data-bs-toggle="tab"
-                   aria-selected="true"
-                   style="color: #FFBD59">User Guides</a>
+                <a class="nav-link" id="guidelines-tab" role="tab" href="#guidelines" aria-controls="guidelines"
+                   data-bs-toggle="tab" aria-selected="false" style="color: #FFBD59">User Guides</a>
             </li>
             <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
-                <a class="nav-link"
-                   id="contact-tab"
-                   data-bs-toggle="tab"
-                   role="tab"
-                   href="#contact"
-                   aria-controls="contact"
-                   aria-selected="false"
-                   style="color: #FFBD59">Contact</a>
+                <a class="nav-link" id="contact-tab" role="tab" href="#contact" aria-controls="contact"
+                   data-bs-toggle="tab" aria-selected="false" style="color: #FFBD59">Contact</a>
             </li>
         </ul>
         <div class="tab-content mt-3">
             <div id="features" class="tab-pane fade show active" role="tabpanel" aria-labelledby="features-tab" tabindex="0">
-                <!-- feature -->
+
                 <section class="mb-5">
                    <div class="container">
                         <div class="d-flex flex-row justify-content-center align-items-center">
@@ -63,169 +46,60 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4">
-                                    <div class="me-3" style="max-width: 10%">
-                                        <img class="w-100" src="./images/icon_qr_code.png" alt="Icon booking"/>
-                                    </div>
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3" style="max-width: 10%"><img class="w-100" src="./images/icon_qr_code_website.png" alt="QR code on the order confirmation"/></div>
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">Dynamic QR code generation</h5>
-                                        <i>Generate dynamic QR code based on sale order / invoice information.</i>
+                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">QR code on the order confirmation</h5>
+                                        <i>After checkout, the customer scans a SePay VietQR code with the exact amount and the order reference.</i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4">
-                                    <div class="me-3" style="max-width: 10%">
-                                        <img class="w-100" src="./images/icon_transaction_history.png" alt="Icon booking"/>
-                                    </div>
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3" style="max-width: 10%"><img class="w-100" src="./images/icon_transaction_history.png" alt="Automatic confirmation"/></div>
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">Automatic Payment Transaction Processing</h5>
-                                        <i>Automatic payment transaction processing via webhook</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4">
-                                    <div class="me-3" style="max-width: 10%">
-                                        <img class="w-100" src="./images/icon_payment_webhook.png" alt="Icon booking"/>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">Webhook Payment Integration</h5>
-                                        <i>Record instant payments via webhook from SePay.</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4">
-                                    <div class="me-3" style="max-width: 10%">
-                                        <img class="w-100" src="./images/icon_qr_code_website.png" alt="Icon booking"/>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">Support QR code on website</h5>
-                                        <i>Support QR code generation for your customers on the website.</i>
+                                        <h5 style="color: #FFBD59; margin-bottom: 5px;">Automatic confirmation</h5>
+                                        <i>When SePay reports the transfer, the online transaction is completed, the order confirmed and the payment reconciled with the bank statement.</i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                    </div>
                 </section>
-                <!-- feature -->
             </div>
-            <div id="guidelines" class="tab-pane fade show" role="tabpanel" tabindex="0" aria-labelledby="guidelines-tab">
+            <div id="guidelines" class="tab-pane fade" role="tabpanel" aria-labelledby="guidelines-tab" tabindex="0">
+
                 <section class="mb-5">
                     <div class="container">
-                        <div class="mb-4">
-                            <h4>I. Getting started</h4>
+                        <div class="mb-5">
+                            <h4>I. Requirements</h4>
                             <div class="px-3">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">
-                                        <i class="fa fa-lightbulb-o"></i>
-                                        <span style="font-weight: 700;">Discount Code</span>
-                                    </h4>
-                                    <p>
-                                        Use discount code <span style="font-weight: 700;">EYVR1SYP</span> to get 10% off the service package value for the first registration.
-                                    </p>
+                                <div class="alert alert-info" role="alert">
+                                    <h5 class="alert-heading"><i class="fa fa-info-circle"></i> <span style="font-weight: 700;">Odoo 20</span></h5>
+                                    
+                                    <p class="mb-0">In Odoo 20 the order confirmation shows the wire-transfer instructions of the payment app, whose QR code
+                                    SePay Integration already provides. This module is installed automatically with the shop and SePay Integration
+                                    and keeps upgrades from Odoo 19 clean.</p>
                                 </div>
-                                <div><p><span style="font-weight: 700;">Step 1: Register for a SePay account</span> <a href="https://my.sepay.vn/register?gcid=cxyuoflu" target="_blank">here</a></p></div>
-                                <img alt="Register Account" class="rounded shadow-lg bg-body mb-3" src="./images/register_account.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Step 2: Choose a package service</span></p>
-                                <img alt="Choose Package" class="rounded shadow-lg bg-body mb-3" src="./images/choose_package_service.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Apply discount code EYVR1SYP to get 10%</span></p>
-                                <img alt="Apply Discount code" class="rounded shadow-lg bg-body mb-3" src="./images/package_discount.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Step 3: Bank connection</span></p>
-                                <img alt="Bank connection" class="rounded shadow-lg bg-body mb-3" src="./images/bank_connect.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Step 4: Setup webhook</span></p>
-                                <p>URL: https://{Your Odoo domain}/webhook/v1/payment/sepay</p>
-                                <img alt="Config Webhook" class="rounded shadow-lg bg-body mb-3" src="./images/config_webhook.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Step 5: Payment Code Structure Configuration</span></p>
-                                <p>Navigate: Company Configuration/General configuration</p>
-                                <img alt="Payment Structure" class="rounded shadow-lg bg-body mb-3" src="./images/payment_structure.png" style="height: auto; width: 100%" />
+                                <p>Install and configure <b>SePay Integration</b> first, then enable the <b>Wire Transfer</b> payment provider on your website,
+                                with the bank journal linked to your SePay account.</p>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <h4>II. Install SePay Integration Module</h4>
+                        <div class="mb-5">
+                            <h4>II. Checkout</h4>
                             <div class="px-3">
-                                <img alt="Install module" class="rounded shadow-lg bg-body mb-3" src="./images/install_module.png" style="height: auto; width: 100%" />
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h4>III. QR code configuration</h4>
-                            <div class="px-3">
-                                <p><span style="font-weight: 700;">Step 1: Add a payment QR-code to your invoices</span></p>
-                                <p>Navigate: Settings/Accounting/Customer Payments/Active QR Code checkbox</p>
-                                <img alt="Active QR code" class="rounded shadow-lg bg-body mb-3" src="./images/active_qr_code.png" style="height: auto; width: 100%" />
-                                <p><span style="font-weight: 700;">Step 2: Add a bank account to contact of the your company</span></p>
-                                <p>Navigate: Contacts/Choose your company/Accounting Tab</p>
-                                <img alt="Add bank account" class="rounded shadow-lg bg-body mb-3" src="./images/add_bank_account.png" style="height: auto; width: 100%" />
-                                <div class="alert alert-warning" role="alert">
-                                    <h4 class="alert-heading">
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                        <span style="font-weight: 700;">Warning</span>
-                                    </h4>
-                                    <p>
-                                        The bank account information of the QR code on the Website or POS will take the last line in the bank account list.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h4>IV. Use QR code on invoice</h4>
-                            <div class="px-3">
-                                <p><span style="font-weight: 700;">Step 1: Choose Recipient Bank & Payment QR-code</span></p>
-                                <p>Navigate to your invoice</p>
-                                <ul>
-                                    <li><span style="font-weight: 700;">Recipient Bank</span>: The bank account receiving money</li>
-                                    <li><span style="font-weight: 700;">Payment QR-code</span>: The QR code type used for invoices</li>
-                                </ul>
-                                <img alt="Invoice" class="rounded shadow-lg bg-body mb-3" src="./images/invoice.png" style="height: auto; width: 100%" />
-                                <p>QR code will appear on customer portal and invoice report</p>
-                                <img alt="customer portal" class="rounded shadow-lg bg-body mb-3" src="./images/qr_customer_portal.png" style="height: auto; width: 100%" />
-                                <img alt="invoice report" class="rounded shadow-lg bg-body mb-3" src="./images/qr_invoice_report.png" style="height: auto; width: 100%" />
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h4>V. Use QR code on website</h4>
-                            <div class="px-3">
-                                <p><span style="font-weight: 700;">Step 1: After the customer purchases and checkout</span></p>
-                                <img alt="Invoice" class="rounded shadow-lg bg-body mb-3" src="./images/checkout.png" style="height: auto; width: 100%" />
-                                <p>Choose <span style="font-weight: 700;">SePay Payment Method</span> and press button <span style="font-weight: 700;">[Pay now]</span></p>
-                                <p>Your customer will then see a QR code on the screen.</p>
-                                <img alt="QR Code Website" class="rounded shadow-lg bg-body mb-3" src="./images/qr_website.png" style="height: auto; width: 100%" />
-                                <p>Your customer will scan the QR code and pay for the order. When the payment is successful, the system will record the transaction status and return it to the customer.</p>
-                                <img alt="Payment Success" class="rounded shadow-lg bg-body mb-3" src="./images/payment_success.png" style="height: auto; width: 100%" />
-                                <p>The payment transaction record on the backend</p>
-                                <img alt="Payment Transaction Web" class="rounded shadow-lg bg-body mb-3" src="./images/payment_transaction_web.png" style="height: auto; width: 100%" />
-                            </div>
-                        </div>
-<!--                        <div class="mb-4">-->
-<!--                            <h4>VI. Use QR code on POS</h4>-->
-<!--                            <div class="px-3">-->
-<!--                                <p><span style="font-weight: 700;">Step 1: After the customer purchases and checkout</span></p>-->
-<!--                                <img alt="Invoice" class="rounded shadow-lg bg-body mb-3" src="./images/checkout.png" style="height: auto; width: 100%" />-->
-<!--                                <p>Choose <span style="font-weight: 700;">SePay Payment Method</span> and press button <span style="font-weight: 700;">[Pay now]</span></p>-->
-<!--                                <p>Your customer will then see a QR code on the screen.</p>-->
-<!--                                <img alt="QR Code Website" class="rounded shadow-lg bg-body mb-3" src="./images/qr_website.png" style="height: auto; width: 100%" />-->
-<!--                                <p>Your customer will scan the QR code and pay for the order. When the payment is successful, the system will record the transaction status and return it to the customer.</p>-->
-<!--                                <img alt="Payment Success" class="rounded shadow-lg bg-body mb-3" src="./images/payment_success.png" style="height: auto; width: 100%" />-->
-<!--                                <p>The payment transaction record on the backend</p>-->
-<!--                                <img alt="Payment Transaction Web" class="rounded shadow-lg bg-body mb-3" src="./images/payment_transaction_web.png" style="height: auto; width: 100%" />-->
-<!--                            </div>-->
-<!--                        </div>-->
-                        <div class="mb-4">
-                            <h4>VI. Record payments via webhook</h4>
-                            <div class="px-3">
-                                <p>- When a customer pays via QR, an api is called from SePay to your Odoo application to record the payment.</p>
-                                <p>- Transaction logging</p>
-                                <img alt="Logging Transaction" class="rounded shadow-lg bg-body mb-3" src="./images/logging_transaction.png" style="height: auto; width: 100%" />
-                                <p>- Transaction Details</p>
-                                <img alt="Transaction Tree" class="rounded shadow-lg bg-body mb-3" src="./images/transaction_tree.png" style="height: auto; width: 100%" />
-                                <img alt="Transaction Form" class="rounded shadow-lg bg-body mb-3" src="./images/transaction_form.png" style="height: auto; width: 100%" />
+                                <p>The customer chooses <b>SePay</b> (or Wire Transfer) and presses <b>Pay now</b>.</p>
+                                <img alt="Checkout" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/checkout_payment.png"/>
+                                <p>The confirmation page shows the SePay QR code to scan in any Vietnamese banking app.</p>
+                                <img alt="Order confirmation" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/order_confirmation_qr.png"/>
+                                <p>The transfer then appears in <b>Invoicing &gt; Banking &gt; SePay Transactions</b> as processed, linked to the order and its payment.</p>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <div id="contact" class="tab-pane fade show" role="tabpanel" aria-labelledby="contact-tab">
+            <div id="contact" class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
                 <section class="mb-5">
                     <div class="container">
                         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -233,7 +107,7 @@
                                 <div class="col-md-6">
                                     <div class="d-flex flex-row rounded border shadow-lg p-1 mb-4 h-100">
                                         <div class="d-flex justify-content-center align-items-center" style="width: 50%">
-                                            <img class="w-75 rounded-circle" src="./images/avatar.png" alt="Icon real time"/>
+                                            <img class="w-75 rounded-circle" src="./images/avatar.png" alt="Long Duong Nhat"/>
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h3>Long Duong Nhat</h3>
@@ -245,14 +119,14 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="d-flex flex-column justify-content-center align-items-center rounded border shadow-lg p-2 h-100">
-                                        <img style="width: 70%" src="./images/qrcode_zalo.png" alt="Icon Zalo"/>
+                                        <img style="width: 70%" src="./images/qrcode_zalo.png" alt="Zalo"/>
                                         <h4><i>Zalo</i></h4>
                                         <i>Scan QR code to connect with me</i>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="d-flex flex-column justify-content-center align-items-center rounded border shadow-lg p-2 h-100">
-                                        <img style="width: 70%" src="./images/qrcode_whatsapp.png" alt="Icon Whatsapp"/>
+                                        <img style="width: 70%" src="./images/qrcode_whatsapp.png" alt="WhatsApp"/>
                                         <h4><i>WhatsApp</i></h4>
                                         <i>Scan QR code to connect with me</i>
                                     </div>
