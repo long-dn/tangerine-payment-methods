@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_state_header" inherit_id="payment_custom.custom_state_header">
+        <xpath expr="//t[@t-set='qr_code']" position="attributes">
+            <attribute name="t-value">tx._sepay_qr_url() if tx.company_id.sepay_enabled else tx.provider_id.sudo().qr_code and tx.company_id.sudo().partner_id.bank_ids[:1].build_qr_code_base64(tx.amount, tx._get_communication(), None, tx.currency_id, tx.partner_id)</attribute>
+        </xpath>
+        <!-- Cap the 540x540 SePay card; core's own 128px QR stays untouched. -->
+        <xpath expr="//div[hasclass('o_qr_code_card')]//img" position="attributes">
+            <attribute name="style">max-width: 200px;</attribute>
+        </xpath>
+    </template>
+</odoo>
