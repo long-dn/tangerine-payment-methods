@@ -1,41 +1,171 @@
-<section id="tangerine_module_heading">
+<section class="mb-5">
    <div class="container">
-      <div class="text-center" style="margin: 1rem 0;">
-         <div class="row" style="align-items: center;">
-            <div class="col-lg-4 col-md-4 col-sm-12" style="text-align: left;">
-               <img src='./images/logo.png' alt='logo' style="width: 45%;">
-            </div>
-         </div>
-      </div>
+       <div class="d-flex flex-column">
+           <img src='./images/logo.png' alt='logo' style="width: 10%;">
+       </div>
    </div>
 </section>
-<section id="tangerine_module_content" style="padding-top: 20px;">
+<section class="mb-5">
    <div class="container">
-      <div class="text-center">
-         <h4 style="font-size: 32px;color: #714B67;margin-bottom: 20px;"><strong>Bank Information Vietnam</strong></h4>
-         <p style="color: #777;font-size: 18px;margin: 0;letter-spacing: 1px;">
-             The Vietnam Bank Information Data Synchronization Module provides API as a solution to collect, process, and distribute financial information from domestic banks.
-         </p>
-      </div>
-      <div class="mb-4">
-          <h3 style="border-bottom: 1px solid #D5D5D5; color: #714B67">List of Banking</h3>
-          <div class="px-3">
-            <img alt="Kanban Banks" src="./images/kanban_bank.png" style="height: auto; width: 100%" />
-          </div>
-      </div>
-
-      <div class="mb-4">
-          <h3 style="border-bottom: 1px solid #D5D5D5; color: #714B67">Search with code</h3>
-          <div class="px-3">
-            <img alt="Kanban Banks" src="./images/search_with_code.png" style="height: auto; width: 100%" />
-          </div>
-      </div>
-
-      <div class="mb-4">
-          <h3 style="border-bottom: 1px solid #D5D5D5; color: #714B67">Search with swift code</h3>
-          <div class="px-3">
-            <img alt="Kanban Banks" src="./images/search_with_swift_code.png" style="height: auto; width: 100%" />
-          </div>
-      </div>
+       <div class="d-flex flex-column justify-content-center align-items-center">
+           <h3 class="mb-3" style="font-size: 32px; color: #714B67;">
+               <span style="font-weight: 700;">Bank Information Vietnam</span>
+           </h3>
+           <p style="color: #777; font-size: 18px; letter-spacing: 1px;" class="text-center">
+               Keep the list of Vietnamese banks up to date from the VietQR directory: code, short name, NAPAS BIN, SWIFT code and logo. Find a bank by any of them and print VietQR codes that every banking app can read.
+           </p>
+           <div class="d-flex flex-wrap justify-content-center"><span class="badge rounded-pill me-2 mb-2" style="background-color: #714B67; font-size: 14px; font-weight: 500;">Odoo 19.0</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #714B67; font-size: 14px; font-weight: 500;">VietQR</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #714B67; font-size: 14px; font-weight: 500;">NAPAS BIN</span><span class="badge rounded-pill me-2 mb-2" style="background-color: #714B67; font-size: 14px; font-weight: 500;">LGPL-3</span></div>
+       </div>
    </div>
+</section>
+<section class="mb-5">
+    <div class="container">
+        <ul class="nav nav-tabs justify-content-center" role="tablist">
+            <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
+                <a class="nav-link active" id="features-tab" role="tab" href="#features" aria-controls="features"
+                   data-bs-toggle="tab" aria-selected="true" style="color: #714B67">Features</a>
+            </li>
+            <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
+                <a class="nav-link" id="guidelines-tab" role="tab" href="#guidelines" aria-controls="guidelines"
+                   data-bs-toggle="tab" aria-selected="false" style="color: #714B67">User Guides</a>
+            </li>
+            <li class="nav-item rounded mx-1" style="font-size: 17px; font-weight: 500;">
+                <a class="nav-link" id="contact-tab" role="tab" href="#contact" aria-controls="contact"
+                   data-bs-toggle="tab" aria-selected="false" style="color: #714B67">Contact</a>
+            </li>
+        </ul>
+        <div class="tab-content mt-3">
+            <div id="features" class="tab-pane fade show active" role="tabpanel" aria-labelledby="features-tab" tabindex="0">
+
+                <section class="mb-5">
+                   <div class="container">
+                        <div class="d-flex flex-row justify-content-center align-items-center">
+                            <span class="d-none d-sm-inline-block" style="width: 10%; margin:32px 20px;opacity: 0.5;border-top: solid 1px #714B67;"></span>
+                            <h3 style="color: #714B67;">Features</h3>
+                            <span class="d-none d-sm-inline-block" style="width: 10%; margin:32px 20px;opacity: 0.5;border-top: solid 1px #714B67;"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3 d-flex align-items-center" style="font-size: 28px; color: #714B67; min-width: 40px;"><i class="fa fa-refresh"></i></div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h5 style="color: #714B67; margin-bottom: 5px;">VietQR directory synchronization</h5>
+                                        <i>All Vietnamese banks and their code, short name, BIN, SWIFT code and logo are loaded at installation, then refreshed on demand or every day.</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3 d-flex align-items-center" style="font-size: 28px; color: #714B67; min-width: 40px;"><i class="fa fa-search"></i></div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h5 style="color: #714B67; margin-bottom: 5px;">Search by code, short name, BIC or BIN</h5>
+                                        <i>Type VCB, TCB or 970436 in any bank selector or in the Banks list: the bank is found even when its name does not contain it.</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3 d-flex align-items-center" style="font-size: 28px; color: #714B67; min-width: 40px;"><i class="fa fa-qrcode"></i></div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h5 style="color: #714B67; margin-bottom: 5px;">VietQR codes that banking apps can read</h5>
+                                        <i>The NAPAS BIN of the bank is written into the VietQR payload of invoices. A bank account no longer needs a BIC to generate the QR code.</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-row rounded border shadow-lg p-3 mb-4 h-100">
+                                    <div class="me-3 d-flex align-items-center" style="font-size: 28px; color: #714B67; min-width: 40px;"><i class="fa fa-university"></i></div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h5 style="color: #714B67; margin-bottom: 5px;">Banking menu</h5>
+                                        <i>Banks and Bank Accounts are gathered in a Banking menu of the Invoicing app, available to billing users.</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </section>
+            </div>
+            <div id="guidelines" class="tab-pane fade" role="tabpanel" aria-labelledby="guidelines-tab" tabindex="0">
+
+                <section class="mb-5">
+                    <div class="container">
+                        <div class="mb-5">
+                            <h4>I. Bank directory</h4>
+                            <div class="px-3">
+                                <p>Install the module: the directory is downloaded from <a href="https://api.vietqr.io/v2/banks" target="_blank">api.vietqr.io</a> straight away.
+                                Open <b>Invoicing &gt; Banking &gt; Banks</b> to browse it.</p>
+                                <img alt="Banks" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/banks_kanban.png"/>
+                                <p>Search a bank by its code, short name, SWIFT code or BIN.</p>
+                                <img alt="Search by code" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/banks_search_code.png"/>
+                                <img alt="Bank" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/bank_form.png"/>
+                                <p>To refresh the directory, use <b>Actions &gt; Sync from VietQR</b> in the Banks list, or activate the scheduled action
+                                <b>Bank Information Vietnam Synchronous</b> (Settings &gt; Technical &gt; Scheduled Actions) to run it every day.</p>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h4>II. Bank accounts</h4>
+                            <div class="px-3">
+                                <p>In <b>Invoicing &gt; Banking &gt; Bank Accounts</b> (or on a contact), select the <b>Bank</b> by typing its code, short name or BIN.</p>
+                                <img alt="Select the bank of an account" class="rounded shadow-lg bg-body mb-3" style="height: auto; width: 100%" src="./images/bank_account_search.png"/>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h4>III. VietQR on invoices</h4>
+                            <div class="px-3">
+                                <p>To print a VietQR code on customer invoices:</p>
+                                <ul>
+                                    <li>enable <b>QR Codes</b> in <b>Invoicing &gt; Configuration &gt; Settings &gt; Customer Payments</b>;</li>
+                                    <li>fill the city of your company;</li>
+                                    <li>on your bank account, choose the Bank, set the <b>Proxy Type</b> to <i>Bank Account</i> and the <b>Proxy Value</b> to the account number.</li>
+                                </ul>
+                                
+                                <div class="alert alert-warning" role="alert">
+                                    <h5 class="alert-heading"><i class="fa fa-lightbulb-o"></i> <span style="font-weight: 700;">Why the BIN matters</span></h5>
+                                    <p class="mb-0">The standard Vietnamese localization writes the BIC of the bank where VietQR expects the NAPAS BIN. With a real SWIFT code there, banking apps cannot read the QR code. This module writes the BIN taken from the VietQR directory instead.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="contact" class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+                <section class="mb-5">
+                    <div class="container">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="row align-items-stretch">
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-row rounded border shadow-lg p-1 mb-4 h-100">
+                                        <div class="d-flex justify-content-center align-items-center" style="width: 50%">
+                                            <img class="w-75 rounded-circle" src="./images/avatar.png" alt="Long Duong Nhat"/>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h3>Long Duong Nhat</h3>
+                                            <i><span style="font-weight: 700;">Phone number</span>: <a href="https://zalo.me/84812212228" target="_blank">+84 812 212 228</a></i>
+                                            <i><span style="font-weight: 700;">Email</span>: <a href="mailto:odoo.tangerine@gmail.com" target="_blank">odoo.tangerine@gmail.com</a></i>
+                                            <i><span style="font-weight: 700;">Address</span>: 42a Street no 19, Ward 8, Go Vap District, Ho Chi Minh City, Vietnam</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="d-flex flex-column justify-content-center align-items-center rounded border shadow-lg p-2 h-100">
+                                        <img style="width: 70%" src="./images/qrcode_zalo.png" alt="Zalo"/>
+                                        <h4><i>Zalo</i></h4>
+                                        <i>Scan QR code to connect with me</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="d-flex flex-column justify-content-center align-items-center rounded border shadow-lg p-2 h-100">
+                                        <img style="width: 70%" src="./images/qrcode_whatsapp.png" alt="WhatsApp"/>
+                                        <h4><i>WhatsApp</i></h4>
+                                        <i>Scan QR code to connect with me</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 </section>
