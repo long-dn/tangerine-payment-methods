@@ -38,6 +38,24 @@
         </field>
     </record>
 
+    <!-- Core only searches banks by name; find them by VietQR code, short name, BIC or BIN too. -->
+    <record id="res_bank_view_search" model="ir.ui.view">
+        <field name="name">res.bank.view.search.inherit.tangerine</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.res_bank_view_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="string">Bank</attribute>
+                <attribute name="filter_domain">['|', '|', '|', '|', ('name', 'ilike', self), ('short_name', 'ilike', self), ('code', 'ilike', self), ('bic', 'ilike', self), ('bin', 'ilike', self)]</attribute>
+            </field>
+            <field name="name" position="after">
+                <field name="code"/>
+                <field name="bic"/>
+                <field name="bin"/>
+            </field>
+        </field>
+    </record>
+
     <record id="base.action_res_bank_form" model="ir.actions.act_window">
         <field name="name">Banks</field>
         <field name="type">ir.actions.act_window</field>
