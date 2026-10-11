@@ -1,16 +1,15 @@
 {
     'name': 'SePay on Website',
-    'version': '18.0.1.0',
-    'category': 'Hidden',
-    'summary': """The SePay On Website Module support QR code initialization on eCommerce. The module is an alternative solution to reduce dependencies when you do not need to use the eCommerce module (website_sale) in SePay Integration.""",
-    'depends': ['tangerine_sepay_integration', 'website_sale'],
+    'summary': 'Display SePay VietQR codes on eCommerce order confirmations.',
     'author': 'Long Duong Nhat',
     'website': 'https://github.com/long-dn',
     'support': 'odoo.tangerine@gmail.com',
-    'data': [
-        'views/website_sale_templates.xml'
-    ],
+    'category': 'Website/eCommerce',
+    'version': '18.0.2.0.0',
     'license': 'LGPL-3',
+    'depends': ['tangerine_sepay_integration', 'website_sale'],
+    'data': ['views/website_sale_templates.xml'],
+    'images': ['static/description/thumbnail.png'],
     'installable': True,
     'auto_install': False,
     'application': False,
