@@ -1,0 +1,1231 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tangerine_sepay_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 13:28+0000\n"
+"PO-Revision-Date: 2026-10-11 13:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "%(count)s SePay transaction(s) could not be imported: %(references)s."
+msgstr "Không nhập được %(count)s giao dịch SePay: %(references)s."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_config_settings.py:0
+msgid "%(count)s transaction(s) were processed."
+msgstr "Đã xử lý %(count)s giao dịch."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "%(count)s transaction(s) were received."
+msgstr "Đã nhận %(count)s giao dịch."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Warning\"/>\n"
+"                            Automatic processing is off. Transactions accepted from SePay are\n"
+"                            stored but never reach the books until you switch it back on or\n"
+"                            press Process pending."
+msgstr ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Cảnh báo\"/>\n"
+"                            Tự động xử lý đang tắt. Giao dịch nhận từ SePay vẫn được lưu\n"
+"                            nhưng không bao giờ vào sổ cho tới khi bạn bật lại hoặc\n"
+"                            bấm Xử lý giao dịch chờ."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "<span class=\"o_light_label\">API token</span>"
+msgstr "<span class=\"o_light_label\">API token</span>"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "<span class=\"o_light_label\">Webhook HMAC secret</span>"
+msgstr "<span class=\"o_light_label\">Khóa bí mật HMAC của webhook</span>"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "A SePay transaction linked to accounting entries cannot be deleted."
+msgstr "Không thể xoá giao dịch SePay đã gắn với bút toán kế toán."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid ""
+"A SePay transaction that is already processed cannot be ignored: %(names)s."
+msgstr "Không thể bỏ qua giao dịch SePay đã xử lý: %(names)s."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid ""
+"A webhook only stores the raw transaction. The scheduled action below is "
+"what turns it into a payment and a bank transaction."
+msgstr ""
+"Webhook chỉ lưu giao dịch thô. Tác vụ theo lịch bên dưới mới là thứ biến nó "
+"thành thanh toán và giao dịch ngân hàng."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__source__api
+msgid "API"
+msgstr "API"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__api_id
+msgid "API ID"
+msgstr "API ID"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__api_payload
+msgid "API Payload"
+msgstr "API payload"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_api_token_configured
+msgid "API Token Configured"
+msgstr "Đã cấu hình API token"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__account_number
+msgid "Account Number"
+msgstr "Số tài khoản"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_needaction
+msgid "Action Needed"
+msgstr "Tác vụ cần thiết"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Trang trí ngoại lệ hoạt động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Kế hoạch hoạt động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__amount
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số tệp đính kèm"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__retry_count
+msgid "Automatic Retries"
+msgstr "Số lần thử lại tự động"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_res_partner_bank
+msgid "Bank Account"
+msgstr "Tài khoản ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__description
+msgid "Bank Description"
+msgstr "Diễn giải của ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__gateway
+msgid "Bank Gateway"
+msgstr "Cổng ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__journal_id
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Bank Journal"
+msgstr "Sổ nhật ký ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__reference_code
+msgid "Bank Reference"
+msgstr "Mã tham chiếu của ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Dòng sao kê ngân hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__bank_statement_line_id
+msgid "Bank Transaction"
+msgstr "Giao dịch ngân hàng"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/account_bank_statement_line.py:0
+msgid ""
+"Cannot reconcile a bank transaction against the bank account itself "
+"(%(account)s)."
+msgstr ""
+"Không thể đối soát giao dịch ngân hàng với chính tài khoản ngân hàng "
+"(%(account)s)."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_res_company
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Thiết lập cấu hình"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__dedup_key
+msgid "Deduplication Key"
+msgstr "Khoá chống trùng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_bank_statement_line__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_move__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_payment_transaction__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_partner_bank__display_name
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_company__sepay_cache_qr_images
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_cache_qr_images
+msgid ""
+"Download each SePay QR code once and keep it as an attachment, so printing "
+"an invoice or opening the portal no longer depends on reaching SePay. Falls "
+"back to the SePay image URL when the download fails."
+msgstr ""
+"Tải mỗi mã QR SePay về một lần và giữ lại dưới dạng tệp đính kèm, để việc in"
+" hoá đơn hay mở cổng thông tin không còn phụ thuộc vào kết nối tới SePay. "
+"Khi tải về thất bại thì quay lại dùng URL ảnh của SePay."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_enabled
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_enabled
+msgid "Enable SePay"
+msgstr "Bật SePay"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_account_setup_bank_manual_config__sepay_use_va
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_partner_bank__sepay_use_va
+msgid ""
+"Encode the virtual account instead of the main account number in SePay QR "
+"codes. Needed for banks that only report transfers made to a virtual "
+"account, such as BIDV, MSB, KienlongBank, OCB or a Vietcombank business "
+"account connected through the bank API."
+msgstr ""
+"Dùng tài khoản ảo thay cho số tài khoản chính trong mã QR SePay. Cần thiết "
+"với các ngân hàng chỉ báo giao dịch chuyển vào tài khoản ảo, như BIDV, MSB, "
+"KienlongBank, OCB hoặc tài khoản doanh nghiệp Vietcombank kết nối qua API "
+"ngân hàng."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid ""
+"Enter the SePay virtual account number of %(account)s before using it in QR "
+"codes."
+msgstr ""
+"Hãy nhập số tài khoản ảo SePay của %(account)s trước khi dùng nó trong mã "
+"QR."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__state__error
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_auto_sync
+msgid ""
+"Fetch transactions from the SePay API on a schedule. This picks up transfers"
+" that SePay never delivered by webhook and needs an API token."
+msgstr ""
+"Lấy giao dịch từ API của SePay theo lịch. Cách này bắt được những khoản "
+"chuyển mà SePay chưa từng gửi qua webhook, và cần có API token."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_bank_statement_line__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_move__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_payment_transaction__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_partner_bank__id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__id
+msgid "ID"
+msgstr "ID"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_exception_icon
+msgid "Icon"
+msgstr "Biểu tượng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng để chỉ báo một hoạt động ngoại lệ."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu chọn, các tin nhắn mới cần bạn chú ý."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__message_has_error
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu chọn, một số tin nhắn gặp lỗi khi gửi."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Ignore"
+msgstr "Bỏ qua"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__state__ignored
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Ignored"
+msgstr "Đã bỏ qua"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__transfer_type__in
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Incoming"
+msgstr "Tiền vào"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_sync_lookback_days
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_sync_lookback_days
+msgid "Initial Lookback Days"
+msgstr "Số ngày lấy lại lần đầu"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__invoice_ids
+msgid "Invoices"
+msgstr "Hoá đơn"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_account_move
+msgid "Journal Entry"
+msgstr "Bút toán"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_last_api_id
+msgid "Last SePay API Transaction"
+msgstr "Giao dịch API SePay cuối cùng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_last_sync_at
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_last_sync_at
+msgid "Last SePay Synchronization"
+msgstr "Lần đồng bộ SePay gần nhất"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_last_sync_error
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_last_sync_error
+msgid "Last SePay Synchronization Error"
+msgstr "Lỗi đồng bộ SePay gần nhất"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_match_content
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_match_content
+msgid "Match the Transfer Content"
+msgstr "Đối chiếu nội dung chuyển khoản"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Matching"
+msgstr "Đối chiếu"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__activity_type_icon
+msgid "Material Symbols icon e.g. checklist"
+msgstr "Biểu tượng Material Symbols, VD: checklist"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Thời hạn hoạt động của tôi"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Needs Action"
+msgstr "Cần xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__state__unmatched
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Needs Review"
+msgstr "Cần rà soát"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Thời hạn cho hoạt động tiếp theo"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_type_id
+msgid "Next Activity Type"
+msgstr "Loại hoạt động tiếp theo"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid ""
+"No SePay API token is configured. Set sepay_api_token or "
+"sepay_api_token_%(company_id)s in odoo.conf."
+msgstr ""
+"Chưa cấu hình API token của SePay. Hãy đặt sepay_api_token hoặc "
+"sepay_api_token_%(company_id)s trong odoo.conf."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "No document exactly matches the SePay payment code."
+msgstr "Không có chứng từ nào khớp chính xác với mã thanh toán SePay."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số lượng tác vụ"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_company__sepay_sync_lookback_days
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_sync_lookback_days
+msgid "Number of days fetched on the first API synchronization."
+msgstr "Số ngày dữ liệu được lấy về trong lần đồng bộ API đầu tiên."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lỗi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__retry_count
+msgid ""
+"Number of failed automatic processing attempts since the last successful "
+"one. The scheduled action stops retrying once the limit is reached, leaving "
+"the transaction to an accountant."
+msgstr ""
+"Số lần xử lý tự động thất bại kể từ lần thành công gần nhất. Tác vụ theo "
+"lịch ngừng thử lại khi chạm giới hạn, để lại giao dịch cho kế toán viên xử "
+"lý."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Số tin nhắn cần xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin nhắn bị lỗi khi gửi"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__payment_transaction_id
+msgid "Online Payment Transaction"
+msgstr "Giao dịch thanh toán trực tuyến"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "Only accounting managers can operate SePay synchronization."
+msgstr "Chỉ quản lý kế toán mới được vận hành đồng bộ SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "Only accounting managers can process SePay transactions."
+msgstr "Chỉ quản lý kế toán mới được xử lý giao dịch SePay."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid ""
+"Options <code>sepay_webhook_secret</code> and <code>sepay_api_token</code>,\n"
+"                            or <code>sepay_webhook_secret_&lt;company id&gt;</code> and\n"
+"                            <code>sepay_api_token_&lt;company id&gt;</code> for one company.\n"
+"                            Webhook URL: <code>/webhook/sepay/v1/transactions</code> (JSON, HMAC-SHA256)."
+msgstr ""
+"Tùy chọn <code>sepay_webhook_secret</code> và <code>sepay_api_token</code>,\n"
+"                            hoặc <code>sepay_webhook_secret_&lt;company id&gt;</code> và\n"
+"                            <code>sepay_api_token_&lt;company id&gt;</code> cho riêng một công ty.\n"
+"                            URL webhook: <code>/webhook/sepay/v1/transactions</code> (JSON, HMAC-SHA256)."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__transfer_type__out
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Outgoing"
+msgstr "Tiền ra"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "Outgoing SePay transactions require accounting review."
+msgstr "Giao dịch tiền ra của SePay cần kế toán rà soát."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__payment_id
+msgid "Payment"
+msgstr "Thanh toán"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__code
+msgid "Payment Code"
+msgstr "Mã thanh toán"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Payment QR Codes"
+msgstr "Mã QR thanh toán"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model,name:tangerine_sepay_integration.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Giao dịch thanh toán"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_auto_sync
+msgid "Poll the SePay API"
+msgstr "Định kỳ gọi API SePay"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Process"
+msgstr "Xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_auto_process
+msgid "Process Transactions Automatically"
+msgstr "Tự động xử lý giao dịch"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Process pending"
+msgstr "Xử lý giao dịch chờ"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__state__processed
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Processed"
+msgstr "Đã xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__processed_at
+msgid "Processed At"
+msgstr "Thời điểm xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__error_message
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Processing Note"
+msgstr "Ghi chú xử lý"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__res_company__sepay_environment__production
+msgid "Production"
+msgstr "Production"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__rating_ids
+msgid "Ratings"
+msgstr "Đánh giá"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__raw_webhook_payload
+msgid "Raw Webhook Payload"
+msgstr "Webhook payload thô"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid ""
+"Receive authenticated bank transactions and use SePay QR codes for this "
+"company."
+msgstr ""
+"Nhận giao dịch ngân hàng đã xác thực và dùng mã QR SePay cho công ty này."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__state__received
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Received"
+msgstr "Đã nhận"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__activity_user_id
+msgid "Responsible User"
+msgstr "Người phụ trách"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Retry"
+msgstr "Thử lại"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "Review the SePay transaction"
+msgstr "Rà soát giao dịch SePay"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_auto_process
+msgid ""
+"Run the scheduled action that turns received SePay transactions into "
+"payments and bank transactions. A webhook only stores the raw transaction, "
+"so nothing reaches the books while this is off."
+msgstr ""
+"Chạy tác vụ theo lịch để biến giao dịch SePay đã nhận thành thanh toán và "
+"giao dịch ngân hàng. Webhook chỉ lưu giao dịch thô, nên khi tắt mục này thì "
+"không có gì vào sổ."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__accumulated
+msgid "Running Balance"
+msgstr "Số dư luỹ kế"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Lỗi gửi SMS"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__sale_order_id
+msgid "Sales Order"
+msgstr "Đơn bán hàng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__res_company__sepay_environment__sandbox
+msgid "Sandbox"
+msgstr "Sandbox"
+
+#. module: tangerine_sepay_integration
+#: model:payment.method,name:tangerine_sepay_integration.payment_method_sepay
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.view_partner_bank_form_inherit_tangerine_sepay
+msgid "SePay"
+msgstr "SePay"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "SePay - VietQR"
+msgstr "SePay - VietQR"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "SePay API pagination exceeded the safety limit."
+msgstr "Phân trang API SePay vượt quá giới hạn an toàn."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_environment
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_environment
+msgid "SePay Environment"
+msgstr "Môi trường SePay"
+
+#. module: tangerine_sepay_integration
+#: model:ir.module.module,shortdesc:base.module_tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "SePay Integration"
+msgstr "Tích hợp SePay"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid ""
+"SePay QR codes are printed on customer invoices and on the online payment "
+"pages."
+msgstr ""
+"Mã QR SePay được in trên hoá đơn bán hàng và hiển thị ở các trang thanh toán"
+" trực tuyến."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "SePay QR codes only support VND."
+msgstr "Mã QR SePay chỉ hỗ trợ VND."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_activity_user_id
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_activity_user_id
+msgid "SePay Review Responsible"
+msgstr "Người phụ trách rà soát SePay"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+#: model:ir.model,name:tangerine_sepay_integration.model_sepay_transaction
+msgid "SePay Transaction"
+msgstr "Giao dịch SePay"
+
+#. module: tangerine_sepay_integration
+#: model:ir.actions.act_window,name:tangerine_sepay_integration.action_sepay_transactions
+#: model:ir.ui.menu,name:tangerine_sepay_integration.menu_sepay_transactions
+msgid "SePay Transactions"
+msgstr "Giao dịch SePay"
+
+#. module: tangerine_sepay_integration
+#: model:ir.module.module,summary:base.module_tangerine_sepay_integration
+msgid ""
+"SePay VietQR codes, HMAC-secured bank transaction sync, automatic payments "
+"and bank reconciliation."
+msgstr ""
+"Mã VietQR SePay, đồng bộ giao dịch ngân hàng bảo mật HMAC, tự động ghi nhận "
+"thanh toán và đối soát ngân hàng."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_setup_bank_manual_config__sepay_va_number
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_partner_bank__sepay_va_number
+msgid "SePay Virtual Account"
+msgstr "Tài khoản ảo SePay"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "SePay auto-processing expected exactly one payment."
+msgstr "Xử lý tự động của SePay cần đúng một bản ghi thanh toán."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "SePay auto-processing only supports VND bank journals."
+msgstr "Xử lý tự động của SePay chỉ hỗ trợ sổ nhật ký ngân hàng bằng VND."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "SePay is not enabled for the recipient bank account company."
+msgstr "Công ty của tài khoản ngân hàng nhận chưa bật SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_config_settings.py:0
+msgid "SePay processing completed"
+msgstr "Đã xử lý xong giao dịch SePay"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "SePay reported another page but returned no transactions."
+msgstr "SePay báo còn trang tiếp theo nhưng không trả về giao dịch nào."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "SePay returned an invalid JSON response."
+msgstr "SePay trả về phản hồi JSON không hợp lệ."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "SePay returned an unexpected API response."
+msgstr "SePay trả về phản hồi API ngoài dự kiến."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "SePay source transaction data is immutable."
+msgstr "Dữ liệu gốc của giao dịch SePay không được phép sửa."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_company.py:0
+msgid "SePay synchronization completed"
+msgstr "Đã đồng bộ xong SePay"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "SePay transaction amounts must be positive integer VND values."
+msgstr "Số tiền giao dịch SePay phải là số nguyên dương theo VND."
+
+#. module: tangerine_sepay_integration
+#: model:ir.actions.server,name:tangerine_sepay_integration.ir_cron_process_transactions_ir_actions_server
+msgid "SePay: Process received transactions"
+msgstr "SePay: Xử lý giao dịch đã nhận"
+
+#. module: tangerine_sepay_integration
+#: model:ir.actions.server,name:tangerine_sepay_integration.ir_cron_sync_transactions_ir_actions_server
+msgid "SePay: Synchronize API transactions"
+msgstr "SePay: Đồng bộ giao dịch qua API"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Secrets"
+msgstr "Thông tin bí mật"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Secrets remain in odoo.conf and are never stored in the database."
+msgstr ""
+"Thông tin bí mật nằm trong odoo.conf và không bao giờ được lưu vào cơ sở dữ "
+"liệu."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__amount_signed
+msgid "Signed Amount"
+msgstr "Số tiền có dấu"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__source
+msgid "Source"
+msgstr "Nguồn"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid "Source Data"
+msgstr "Dữ liệu gốc"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__transaction_date_source
+msgid "Source Transaction Date"
+msgstr "Ngày giao dịch theo nguồn"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__state
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Đã quá ngày đến hạn\n"
+"Hôm nay: Ngày của hoạt động là hôm nay\n"
+"Đã lên kế hoạch: Các hoạt động trong tương lai."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_company__sepay_cache_qr_images
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_cache_qr_images
+msgid "Store SePay QR Images"
+msgstr "Lưu ảnh mã QR SePay"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Sync now"
+msgstr "Đồng bộ ngay"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.res_config_settings_view_form
+msgid "Synchronization and Processing"
+msgstr "Đồng bộ và xử lý"
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay API transaction is missing required fields: %(fields)s."
+msgstr "Giao dịch API SePay thiếu các trường bắt buộc: %(fields)s."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "The SePay QR amount must be greater than zero."
+msgstr "Số tiền trên mã QR SePay phải lớn hơn 0."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay account number is missing."
+msgstr "Thiếu số tài khoản SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay account number must match exactly one bank journal."
+msgstr "Số tài khoản SePay phải khớp đúng một sổ nhật ký ngân hàng."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay amount exceeds the matched invoice residual."
+msgstr "Số tiền SePay vượt quá số còn phải thu của hoá đơn đã khớp."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay bank journal has no manual inbound payment method."
+msgstr ""
+"Sổ nhật ký ngân hàng của SePay không có phương thức thanh toán thủ công cho "
+"tiền vào."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay bank transaction could not be reconciled."
+msgstr "Không đối trừ được giao dịch ngân hàng của SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay running balance is invalid."
+msgstr "Số dư luỹ kế của SePay không hợp lệ."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay transaction amount is invalid."
+msgstr "Số tiền giao dịch SePay không hợp lệ."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.constraint,message:tangerine_sepay_integration.constraint_sepay_transaction_amount_positive
+msgid "The SePay transaction amount must be greater than zero."
+msgstr "Số tiền giao dịch SePay phải lớn hơn 0."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay transaction date is invalid."
+msgstr "Ngày giao dịch SePay không hợp lệ."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay transaction date is missing."
+msgstr "Thiếu ngày giao dịch SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay transfer type must be in or out."
+msgstr "Loại giao dịch SePay phải là tiền vào hoặc tiền ra."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The SePay webhook is missing required fields: %(fields)s."
+msgstr "Webhook SePay thiếu các trường bắt buộc: %(fields)s."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/account_bank_statement_line.py:0
+msgid ""
+"The bank transaction or the journal items changed during reconciliation. "
+"Please try again."
+msgstr ""
+"Giao dịch ngân hàng hoặc các bút toán đã thay đổi trong lúc đối soát. Vui "
+"lòng thử lại."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.constraint,message:tangerine_sepay_integration.constraint_res_company_sepay_lookback_positive
+msgid "The initial SePay lookback must be between 1 and 31 days."
+msgstr "Số ngày lấy lại lần đầu của SePay phải từ 1 đến 31 ngày."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/account_bank_statement_line.py:0
+msgid ""
+"The journal items must share one account to be reconciled with a bank "
+"transaction."
+msgstr ""
+"Các bút toán phải cùng một tài khoản để đối soát với giao dịch ngân hàng."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/account_bank_statement_line.py:0
+msgid "The journal items to reconcile no longer exist."
+msgstr "Các bút toán cần đối soát không còn tồn tại."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid ""
+"The matched invoice is already fully paid and no existing payment records "
+"this transfer."
+msgstr ""
+"Hoá đơn đã khớp thì đã thanh toán đủ, và không có bản ghi thanh toán nào ứng"
+" với khoản chuyển này."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The matched invoice is not in VND."
+msgstr "Hoá đơn đã khớp không dùng VND."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid "The payment has no open outstanding item for bank reconciliation."
+msgstr ""
+"Bản ghi thanh toán không còn khoản chờ đối trừ nào để đối chiếu ngân hàng."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid ""
+"The receiving account does not identify exactly one SePay-enabled company."
+msgstr "Tài khoản nhận không xác định được đúng một công ty đã bật SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/account_move.py:0
+msgid ""
+"The recipient account of invoice %(invoice)s is not a SePay bank journal "
+"account, so no SePay QR code can be generated for it."
+msgstr ""
+"Tài khoản nhận của hoá đơn %(invoice)s không phải tài khoản thuộc sổ nhật ký"
+" ngân hàng SePay, nên không thể sinh mã QR SePay cho hoá đơn này."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "The recipient bank account number is missing."
+msgstr "Thiếu số tài khoản ngân hàng của bên nhận."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "The recipient bank has no SePay-compatible short name, code, or BIN."
+msgstr ""
+"Ngân hàng nhận không có tên viết tắt, mã hoặc BIN tương thích với SePay."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/res_partner_bank.py:0
+msgid "The recipient bank is missing."
+msgstr "Thiếu ngân hàng của bên nhận."
+
+#. module: tangerine_sepay_integration
+#. odoo-python
+#: code:addons/tangerine_sepay_integration/models/sepay_transaction.py:0
+msgid ""
+"The sales order has no exact pending payment transaction or posted invoice."
+msgstr ""
+"Đơn bán hàng không có giao dịch thanh toán đang chờ hay hoá đơn đã vào sổ "
+"nào khớp chính xác."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.constraint,message:tangerine_sepay_integration.constraint_sepay_transaction_company_api_unique
+msgid "This SePay API transaction has already been imported for the company."
+msgstr "Giao dịch API SePay này đã được nhập cho công ty."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.constraint,message:tangerine_sepay_integration.constraint_sepay_transaction_company_dedup_unique
+msgid "This SePay transaction has already been imported for the company."
+msgstr "Giao dịch SePay này đã được nhập cho công ty."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.constraint,message:tangerine_sepay_integration.constraint_sepay_transaction_company_webhook_unique
+msgid "This SePay webhook has already been received for the company."
+msgstr "Webhook SePay này đã được nhận cho công ty."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_form
+msgid ""
+"This transfer will be closed without any accounting entry. Its bank "
+"transaction stays available for reconciliation. Continue?"
+msgstr ""
+"Khoản chuyển này sẽ được đóng mà không sinh bút toán nào. Giao dịch ngân "
+"hàng của nó vẫn còn để đối chiếu. Tiếp tục?"
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_list
+msgid "Total"
+msgstr "Tổng"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__name
+msgid "Transaction"
+msgstr "Giao dịch"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__content
+msgid "Transaction Content"
+msgstr "Nội dung giao dịch"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__transaction_date
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.sepay_transaction_view_search
+msgid "Transaction Date"
+msgstr "Ngày giao dịch"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__transfer_type
+msgid "Transfer Type"
+msgstr "Loại giao dịch"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_sepay_transaction__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ trên bản ghi."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_company__sepay_enabled
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_enabled
+msgid ""
+"Use SePay QR codes and accept authenticated SePay transactions for this "
+"company."
+msgstr ""
+"Dùng mã QR SePay và chấp nhận các giao dịch SePay đã xác thực cho công ty "
+"này."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_account_setup_bank_manual_config__sepay_use_va
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_partner_bank__sepay_use_va
+msgid "Use Virtual Account in QR"
+msgstr "Dùng tài khoản ảo trong QR"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_company__sepay_activity_user_id
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_activity_user_id
+msgid ""
+"User who gets an activity whenever a SePay transaction needs accounting "
+"review or fails to process. Leave empty to rely on the SePay Transactions "
+"screen alone."
+msgstr ""
+"Người nhận hoạt động mỗi khi một giao dịch SePay cần kế toán rà soát hoặc xử"
+" lý thất bại. Để trống nếu chỉ dựa vào màn hình Giao dịch SePay."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__sub_account
+msgid "Virtual Account"
+msgstr "Tài khoản ảo"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_account_setup_bank_manual_config__sepay_va_number
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_partner_bank__sepay_va_number
+msgid ""
+"Virtual account (VA) number SePay shows for this bank account. Money sent to"
+" it lands on the main account."
+msgstr ""
+"Số tài khoản ảo (VA) mà SePay cấp cho tài khoản ngân hàng này. Tiền chuyển "
+"vào VA sẽ về tài khoản chính."
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__source__webhook
+msgid "Webhook"
+msgstr "Webhook"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__webhook_id
+msgid "Webhook ID"
+msgstr "Webhook ID"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_sepay_transaction__webhook_payload
+msgid "Webhook Payload"
+msgstr "Webhook payload"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,field_description:tangerine_sepay_integration.field_res_config_settings__sepay_webhook_secret_configured
+msgid "Webhook Secret Configured"
+msgstr "Đã cấu hình webhook secret"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields.selection,name:tangerine_sepay_integration.selection__sepay_transaction__source__both
+msgid "Webhook and API"
+msgstr "Webhook và API"
+
+#. module: tangerine_sepay_integration
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_company__sepay_match_content
+#: model:ir.model.fields,help:tangerine_sepay_integration.field_res_config_settings__sepay_match_content
+msgid ""
+"When SePay sends no payment code, look the document reference up inside the "
+"free-text transfer content. A document is only accepted when its whole "
+"reference appears there and it is the only match."
+msgstr ""
+"Khi SePay không gửi kèm mã thanh toán, hệ thống tìm số chứng từ trong nội "
+"dung chuyển khoản tự do. Chứng từ chỉ được chấp nhận khi toàn bộ số chứng từ"
+" xuất hiện ở đó và đó là kết quả khớp duy nhất."
+
+#. module: tangerine_sepay_integration
+#: model_terms:ir.ui.view,arch_db:tangerine_sepay_integration.view_partner_bank_form_inherit_tangerine_sepay
+msgid "e.g. QRPSEP1ZZZZ54900752"
+msgstr "VD: QRPSEP1ZZZZ54900752"
