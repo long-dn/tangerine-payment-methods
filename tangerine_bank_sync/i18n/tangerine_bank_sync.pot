@@ -1,0 +1,117 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tangerine_bank_sync
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250429\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 13:28+0000\n"
+"PO-Revision-Date: 2026-10-11 13:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_bank__short_name
+msgid "Abbreviated bank name from the VietQR directory."
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_bank__bin
+msgid "BIN"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model,name:tangerine_bank_sync.model_res_bank
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.res_bank_kanban_views
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.res_bank_view_search
+msgid "Bank"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model,name:tangerine_bank_sync.model_res_partner_bank
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_bank_accounts
+msgid "Bank Accounts"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_bank__bin
+msgid "Bank Identification Number used for VietQR / NAPAS routing."
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.actions.server,name:tangerine_bank_sync.ir_cron_sync_bank_VN_ir_actions_server
+msgid "Bank Information Vietnam Synchronous"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_banking
+msgid "Banking"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.ui.menu,name:tangerine_bank_sync.menu_banks
+msgid "Banks"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#. odoo-python
+#: code:addons/tangerine_bank_sync/models/res_partner_bank.py:0
+msgid ""
+"Can't generate a Vietnamese QR banking code with a currency other than VND."
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_bank__code
+msgid "Code"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.res_bank_kanban_views
+msgid "Code:"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#. odoo-python
+#: code:addons/tangerine_bank_sync/models/res_bank.py:0
+msgid "Could not synchronize bank information: %s"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.res_bank_kanban_views
+msgid "Logo"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_bank__logo_url
+msgid "Logo URL"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,field_description:tangerine_bank_sync.field_res_bank__short_name
+msgid "Short Name"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_bank__code
+msgid "Short bank code from the VietQR directory (e.g. VCB, TCB)."
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model_terms:ir.ui.view,arch_db:tangerine_bank_sync.res_bank_kanban_views
+msgid "Swift:"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.actions.server,name:tangerine_bank_sync.action_server_bank_information_sync
+msgid "Sync from VietQR"
+msgstr ""
+
+#. module: tangerine_bank_sync
+#: model:ir.model.fields,help:tangerine_bank_sync.field_res_bank__logo_url
+msgid "URL of the bank logo from the VietQR directory."
+msgstr ""
