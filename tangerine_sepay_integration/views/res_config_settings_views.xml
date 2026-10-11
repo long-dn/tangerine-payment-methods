@@ -23,9 +23,9 @@
                                 <label for="sepay_activity_user_id" class="col-lg-5 o_light_label"/>
                                 <field name="sepay_activity_user_id"/>
                             </div>
-                            <div class="row mt8">
-                                <field name="sepay_match_content"/>
-                                <label for="sepay_match_content" class="o_light_label"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_match_content" class="w-auto"/>
+                                <label for="sepay_match_content" class="o_light_label mb-0"/>
                             </div>
                         </div>
                     </setting>
@@ -33,9 +33,9 @@
                              help="SePay QR codes are printed on customer invoices and on the online payment pages."
                              invisible="not sepay_enabled">
                         <div class="content-group">
-                            <div class="row mt8">
-                                <field name="sepay_cache_qr_images"/>
-                                <label for="sepay_cache_qr_images" class="o_light_label"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_cache_qr_images" class="w-auto"/>
+                                <label for="sepay_cache_qr_images" class="o_light_label mb-0"/>
                             </div>
                         </div>
                     </setting>
@@ -48,26 +48,26 @@
                             Webhook URL: <code>/webhook/sepay/v1/transactions</code> (JSON, HMAC-SHA256).
                         </div>
                         <div class="content-group">
-                            <div class="row mt8">
-                                <span class="col-lg-5 o_light_label">Webhook HMAC secret</span>
-                                <field name="sepay_webhook_secret_configured" readonly="1"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_webhook_secret_configured" readonly="1" class="w-auto"/>
+                                <span class="o_light_label">Webhook HMAC secret</span>
                             </div>
-                            <div class="row mt8">
-                                <span class="col-lg-5 o_light_label">API token</span>
-                                <field name="sepay_api_token_configured" readonly="1"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_api_token_configured" readonly="1" class="w-auto"/>
+                                <span class="o_light_label">API token</span>
                             </div>
                         </div>
                     </setting>
                     <setting string="Synchronization and Processing"
                              help="A webhook only stores the raw transaction. The scheduled action below is what turns it into a payment and a bank transaction.">
                         <div class="content-group">
-                            <div class="row mt8">
-                                <field name="sepay_auto_process"/>
-                                <label for="sepay_auto_process" class="o_light_label"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_auto_process" class="w-auto"/>
+                                <label for="sepay_auto_process" class="o_light_label mb-0"/>
                             </div>
-                            <div class="row mt8">
-                                <field name="sepay_auto_sync"/>
-                                <label for="sepay_auto_sync" class="o_light_label"/>
+                            <div class="mt8 d-flex align-items-center gap-2">
+                                <field name="sepay_auto_sync" class="w-auto"/>
+                                <label for="sepay_auto_sync" class="o_light_label mb-0"/>
                             </div>
                         </div>
                         <div class="alert alert-warning mt8" role="alert"
