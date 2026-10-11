@@ -1,30 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="payment_confirmation_status" inherit_id="website_sale.payment_confirmation_status">
-        <xpath expr="//div[@t-if='tx_sudo.provider_id.sudo().qr_code']" position="replace"/>
-        <xpath expr="//div[@t-if='order.reference']" position="after">
-
-            <div t-if="tx_sudo.provider_id.sudo().qr_code">
-                <t t-if="tx_sudo.payment_method_code == 'sepay' and tx_sudo.company_id.partner_id.bank_ids">
-                    <t t-set="qr_code" t-value="tx_sudo.company_id.partner_id.bank_ids[-1].build_vietqr_code(tx_sudo.amount, tx_sudo.reference)"/>
-                </t>
-                <t t-else="">
-                    <t t-set="qr_code" t-value="tx_sudo.company_id.partner_id.bank_ids[:1].build_qr_code_base64(order.amount_total,tx_sudo.reference, None, tx_sudo.currency_id, tx_sudo.partner_id)"/>
-                </t>
-                <t t-if="tx_sudo.state == 'pending' or order.amount_total != tx_sudo.amount">
-                    <div class="d-flex flex-row justify-content-center align-items-center">
-                        <span class="d-none d-sm-inline-block" style="width: 20%; margin: 32px 20px; opacity: .5; border-top: solid 1px #000000;"/>
-                        <h6 class="text-center">OR</h6>
-                        <span class="d-none d-sm-inline-block" style="width: 20%; margin: 32px 20px; opacity: .5; border-top: solid 1px #000000;"/>
-                    </div>
-                    <div class="o_qr_code_card card order-1 order-md-3 bg-info">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center pb-3">
-                            <img class="mb-2 border border-dark rounded" t-att-width="'200px' if tx_sudo.payment_method_code == 'sepay' else ''" t-att-src="qr_code"/>
-                            <small class="text-center text-wrap lh-sm">Scan me in your banking app</small>
-                        </div>
-                    </div>
-                </t>
-            </div>
+        <xpath expr="//div[@t-if='tx_sudo.provider_id.sudo().qr_code']" position="attributes">
+            <attribute name="t-if">tx_sudo.company_id.sepay_enabled or tx_sudo.provider_id.sudo().qr_code</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='qr_code']" position="attributes">
+            <attribute name="t-value">tx_sudo._sepay_qr_url() if tx_sudo.company_id.sepay_enabled else tx_sudo.company_id.partner_id.bank_ids[:1].build_qr_code_base64(order.amount_total, tx_sudo.reference, None, tx_sudo.currency_id, tx_sudo.partner_id)</attribute>
+        </xpath>
+        <!-- Cap the 540x540 SePay card; core's own 128px QR stays untouched. -->
+        <xpath expr="//img[@t-att-src='qr_code']" position="attributes">
+            <attribute name="style">max-width: 200px;</attribute>
         </xpath>
     </template>
 </odoo>
