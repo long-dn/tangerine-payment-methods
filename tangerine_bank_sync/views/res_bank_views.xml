@@ -4,46 +4,23 @@
         <field name="name">res.bank.kanban.views</field>
         <field name="model">res.bank</field>
         <field name="arch" type="xml">
-            <kanban class="o_modules_kanban">
-                <field name="name"/>
-                <field name="bin"/>
-                <field name="code"/>
-                <field name="short_name"/>
-                <field name="logo_url"/>
+            <kanban>
                 <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
-                            <div class="o_kanban_image_fill_left d-none d-md-block">
-                                <t t-if="record.logo_url.value">
-                                    <img t-attf-src="#{record.logo_url.value}" style="max-width: 100%; height:auto; margin-top:30%;" alt="Icon"/>
-                                </t>
-                                <t t-else="">
-                                    <img t-attf-src="/tangerine_bank_sync/static/description/images/company_image.png" style="max-width: 100%; height:auto;" alt="Icon"/>
-                                </t>
-                            </div>
-                            <div class="oe_kanban_details d-flex flex-column justify-content-between">
-                                <div>
-                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/></strong>
-                                </div>
-                                <p class="oe_module_name text-nowrap" style="overflow: hidden; text-overflow: ellipsis; color: #d2317b;">
-                                    <code>
-                                        <t t-if="record.code.value">
-                                            <span>Code: <field name="code"/></span>
-                                        </t>
-                                        <br/>
-                                        <t t-if="record.bic.value">
-                                            <span>Swift Code: <field name="bic"/></span>
-                                        </t>
-                                    </code>
-                                </p>
-                            </div>
-                            <div class="o_kanban_record_bottom">
-                                <div class="oe_kanban_bottom_left"/>
-                                <div class="oe_kanban_bottom_right"/>
-                            </div>
-                        </div>
+                    <t t-name="card" class="flex-row align-items-center">
+                        <aside class="o_bank_logo">
+                            <field t-if="record.logo_url.value" name="logo_url" widget="image_url" alt="Logo"/>
+                            <i t-else="" class="fa fa-university fa-2x text-muted" title="Bank" role="img" aria-label="Bank"/>
+                        </aside>
+                        <main class="ms-2">
+                            <field name="name" class="fw-bold fs-5"/>
+                            <p class="text-muted small my-0 lh-sm">
+                                <code t-if="record.code.value">Code: <field name="code"/></code>
+                                <br t-if="record.code.value and record.bic.value"/>
+                                <code t-if="record.bic.value">Swift: <field name="bic"/></code>
+                            </p>
+                        </main>
                     </t>
-                  </templates>
+                </templates>
             </kanban>
         </field>
     </record>
@@ -57,7 +34,6 @@
                 <field name="code"/>
                 <field name="bin"/>
                 <field name="short_name"/>
-                <button name="bank_information_sync" type="object" class="btn btn-primary" string="Sync"/>
             </field>
         </field>
     </record>

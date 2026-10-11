@@ -1,19 +1,25 @@
-# -*- coding: utf-8 -*-
 {
     'name': 'Bank Information Vietnam',
-    'summary': """Providing the latest API to synchronize banking information in Vietnam.""",
+    'summary': 'Synchronize Vietnamese banking information (BIN, BIC, logo) via the VietQR API and feed the BIN to VietQR payment codes.',
     'author': 'Long Duong Nhat',
     'website': 'https://github.com/long-dn',
-    'category': 'Extra Tools',
     'support': 'odoo.tangerine@gmail.com',
-    'version': '18.0.1.0',
-    'depends': ['base'],
+    'category': 'Accounting',
+    'version': '19.0.2.0.0',
+    'license': 'LGPL-3',
+    'depends': ['account', 'l10n_vn'],
     'data': [
         'data/ir_cron.xml',
-        'views/res_bank_views.xml'
+        'data/ir_actions_server.xml',
+        'views/res_bank_views.xml',
+        'views/bank_menus.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'tangerine_bank_sync/static/src/res_bank_kanban.scss',
+        ],
+    },
     'images': ['static/description/thumbnail.png'],
-    'license': 'LGPL-3',
     'installable': True,
     'auto_install': False,
     'application': False,
