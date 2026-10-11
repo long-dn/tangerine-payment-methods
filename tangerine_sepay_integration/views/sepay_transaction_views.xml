@@ -81,7 +81,7 @@
                         </group>
                     </group>
                     <group string="Processing Note" name="processing_note" invisible="not error_message">
-                        <field name="error_message" nolabel="1"/>
+                        <field name="error_message" nolabel="1" colspan="2"/>
                     </group>
                     <notebook groups="account.group_account_manager">
                         <page string="Source Data" name="source_data">
