@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_sepay_transaction_invoice,sepay.transaction invoice,sepay.transaction,account.group_account_invoice,r,
+access_sepay_transaction_readonly,sepay.transaction readonly,sepay.transaction,account.group_account_readonly,r,
+sepay_transaction_company_rule,SePay transactions by allowed company,sepay.transaction,,crud,"[('company_id', 'in', company_ids)]"

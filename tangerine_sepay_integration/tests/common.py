@@ -18,7 +18,7 @@ class SePayCommon(AccountTestInvoicingCommon):
         cls.company.qr_code = True
         cls.env.user.group_ids |= cls.env.ref('account.group_account_manager')
 
-        cls.bank = cls.env['res.bank'].create(
+        cls.bank = cls.env['vn.bank'].create(
             {
                 'name': 'Test SePay Bank',
                 'code': 'SEPAYBANK',
@@ -28,9 +28,9 @@ class SePayCommon(AccountTestInvoicingCommon):
         )
         cls.bank_account = cls.env['res.partner.bank'].create(
             {
-                'acc_number': '0123456789',
-                'acc_holder_name': 'ABC FOOD COMPANY',
-                'bank_id': cls.bank.id,
+                'account_number': '0123456789',
+                'holder_name': 'ABC FOOD COMPANY',
+                'vn_bank_id': cls.bank.id,
                 'partner_id': cls.company.partner_id.id,
                 'company_id': cls.company.id,
             },
@@ -57,7 +57,7 @@ class SePayCommon(AccountTestInvoicingCommon):
             'id': 10001,
             'gateway': 'SPB',
             'transactionDate': WEBHOOK_TRANSACTION_DATE,
-            'accountNumber': self.bank_account.acc_number,
+            'accountNumber': self.bank_account.account_number,
             'subAccount': None,
             'code': 'INV-SEPAY-001',
             'content': 'INV-SEPAY-001',

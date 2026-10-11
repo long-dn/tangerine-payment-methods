@@ -32,7 +32,7 @@ class TestSePayVirtualAccount(SePayCommon):
     def test_qr_keeps_the_main_account_while_the_flag_is_off(self):
         self.bank_account.sepay_va_number = VIRTUAL_ACCOUNT
 
-        self.assertEqual(self._qr_account_number(), [self.bank_account.acc_number])
+        self.assertEqual(self._qr_account_number(), [self.bank_account.account_number])
 
     def test_qr_strips_separators_from_the_virtual_account(self):
         self.bank_account.write(

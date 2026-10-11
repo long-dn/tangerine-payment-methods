@@ -28,7 +28,7 @@ class TestSePayInvoiceQrDefaults(SePayCommon):
         """Core sorts by currency only, so it can land on an unusable account."""
         other = self.env['res.partner.bank'].create(
             {
-                'acc_number': '9999999999',
+                'account_number': '9999999999',
                 'partner_id': self.company.partner_id.id,
                 'company_id': self.company.id,
             },

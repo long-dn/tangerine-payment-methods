@@ -26,7 +26,7 @@ class TestSePayQrAndSecurity(SePayCommon):
             f'{parsed.scheme}://{parsed.netloc}{parsed.path}',
             'https://qr.sepay.vn/img',
         )
-        self.assertEqual(query['acc'], [self.bank_account.acc_number])
+        self.assertEqual(query['acc'], [self.bank_account.account_number])
         self.assertEqual(query['bank'], [self.bank.short_name])
         self.assertEqual(query['amount'], ['500000'])
         self.assertEqual(query['des'], ['INV/2026/001 & customer'])
@@ -81,8 +81,8 @@ class TestSePayQrAndSecurity(SePayCommon):
     def test_printing_never_reroutes_the_invoice_bank_account(self):
         other_account = self.env['res.partner.bank'].create(
             {
-                'acc_number': '9998887776',
-                'bank_id': self.bank.id,
+                'account_number': '9998887776',
+                'vn_bank_id': self.bank.id,
                 'partner_id': self.company.partner_id.id,
                 'company_id': self.company.id,
             },

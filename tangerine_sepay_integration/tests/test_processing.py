@@ -20,7 +20,8 @@ class TestSePayProcessing(SePayCommon):
         self.assertEqual(transaction.state, 'processed')
         self.assertEqual(transaction.invoice_ids, invoice)
         self.assertTrue(transaction.payment_id)
-        self.assertEqual(transaction.payment_id.state, 'paid')
+        # Matched with its bank transaction, the payment is reconciled in 20.0.
+        self.assertEqual(transaction.payment_id.state, 'reconciled')
         self.assertTrue(transaction.bank_statement_line_id.is_reconciled)
         self.assertEqual(transaction.bank_statement_line_id.amount, 500000)
         self.assertEqual(invoice.amount_residual, 0)
@@ -78,6 +79,9 @@ class TestSePayProcessing(SePayCommon):
                 {
                     'partner_id': self.partner_a.id,
                     'company_id': self.company.id,
+                    # Since 20.0 a payment no longer confirms an order that
+                    # still waits for its online signature, as on eCommerce.
+                    'require_signature': False,
                     'order_line': [
                         Command.create(
                             {

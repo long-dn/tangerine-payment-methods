@@ -46,7 +46,7 @@ class TestSePayIngestion(SePayCommon):
                 {
                     'id': 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
                     'transaction_date': '2026-08-27T10:15:20+07:00',
-                    'account_number': self.bank_account.acc_number,
+                    'account_number': self.bank_account.account_number,
                     'va': None,
                     'transfer_type': 'in',
                     'amount_in': 500000,
@@ -74,7 +74,7 @@ class TestSePayIngestion(SePayCommon):
                     {
                         'id': 'api-1',
                         'transaction_date': '2026-08-27T10:15:20+07:00',
-                        'account_number': self.bank_account.acc_number,
+                        'account_number': self.bank_account.account_number,
                         'transfer_type': 'in',
                         'amount_in': 100000,
                         'amount_out': 0,
@@ -93,7 +93,7 @@ class TestSePayIngestion(SePayCommon):
                     {
                         'id': 'api-2',
                         'transaction_date': '2026-08-27T10:16:20+07:00',
-                        'account_number': self.bank_account.acc_number,
+                        'account_number': self.bank_account.account_number,
                         'transfer_type': 'in',
                         'amount_in': 200000,
                         'amount_out': 0,
@@ -240,7 +240,7 @@ class TestSePayIngestion(SePayCommon):
             return {
                 'id': identifier,
                 'transaction_date': '2026-08-27T10:15:20+07:00',
-                'account_number': self.bank_account.acc_number,
+                'account_number': self.bank_account.account_number,
                 'transfer_type': 'in',
                 'amount_in': amount,
                 'amount_out': 0,

@@ -5,7 +5,7 @@
     'website': 'https://github.com/long-dn',
     'support': 'odoo.tangerine@gmail.com',
     'category': 'Accounting/Payment Providers',
-    'version': '19.0.2.0.0',
+    'version': '20.0.2.0.0',
     'license': 'LGPL-3',
     'depends': [
         'account_payment',
@@ -15,8 +15,7 @@
         'tangerine_bank_sync',
     ],
     'data': [
-        'security/sepay_security.xml',
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'data/ir_cron.xml',
         'data/payment_method_data.xml',
         'views/res_config_settings_views.xml',

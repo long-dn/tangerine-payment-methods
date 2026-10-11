@@ -58,7 +58,20 @@ class ResPartnerBank(models.Model):
         self.ensure_one()
         if self.sepay_use_va:
             return self._sepay_va_number()
-        return ''.join(char for char in self.acc_number if char.isalnum())
+        return ''.join(char for char in self.account_number if char.isalnum())
+
+    @api.private
+    def _sepay_bank_code(self):
+        """Return the bank identifier SePay accepts in its QR endpoint.
+
+        The VietQR directory provides a short name, code and BIN. Without a
+        directory bank, a numeric `bank_bic` is taken as the NAPAS BIN, which
+        is what upstream l10n_vn stores there.
+        """
+        self.ensure_one()
+        bank = self.vn_bank_id
+        bic = (self.bank_bic or '').strip()
+        return bank.short_name or bank.code or bank.bin or (bic if bic.isdigit() else False)
 
     @api.model
     def _get_available_qr_methods(self):
@@ -87,11 +100,11 @@ class ResPartnerBank(models.Model):
             company = companies if len(companies) == 1 else self.env['res.company']
         if not company or not company.sepay_enabled:
             return _('SePay is not enabled for the recipient bank account company.')
-        if not self.acc_number:
+        if not self.account_number:
             return _('The recipient bank account number is missing.')
-        if not self.bank_id:
+        if not self.vn_bank_id and not self._sepay_bank_code():
             return _('The recipient bank is missing.')
-        if not (self.bank_id.short_name or self.bank_id.code or self.bank_id.bin):
+        if not self._sepay_bank_code():
             return _(
                 'The recipient bank has no SePay-compatible short name, code, or BIN.',
             )
@@ -131,7 +144,7 @@ class ResPartnerBank(models.Model):
             if silent_errors:
                 return None
             raise UserError(error)
-        bank_code = self.bank_id.short_name or self.bank_id.code or self.bank_id.bin
+        bank_code = self._sepay_bank_code()
         params = {
             'acc': self._sepay_qr_account_number(),
             'bank': bank_code,
@@ -139,8 +152,8 @@ class ResPartnerBank(models.Model):
             'des': communication or '',
             'template': template,
         }
-        if self.acc_holder_name:
-            params['holder'] = self.acc_holder_name
+        if self.holder_name:
+            params['holder'] = self.holder_name
         remote_url = f'{SEPAY_QR_ENDPOINT}?{urlencode(params)}'
         if not self._sepay_qr_company().sepay_cache_qr_images:
             return remote_url
@@ -168,7 +181,7 @@ class ResPartnerBank(models.Model):
             limit=1,
         )
         if attachment:
-            return image_data_uri(attachment.datas)
+            return image_data_uri(attachment.raw)
         try:
             response = requests.get(remote_url, timeout=SEPAY_QR_DOWNLOAD_TIMEOUT)
             response.raise_for_status()
@@ -194,7 +207,7 @@ class ResPartnerBank(models.Model):
                 'raw': response.content,
             },
         )
-        return image_data_uri(attachment.datas)
+        return image_data_uri(attachment.raw)
 
     def _get_qr_code_url(
         self,

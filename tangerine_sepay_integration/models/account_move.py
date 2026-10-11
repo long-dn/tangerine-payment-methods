@@ -1,6 +1,6 @@
 import logging
 
-from odoo import _, api, fields, models
+from odoo import _, api, models
 from odoo.exceptions import UserError
 
 from .res_partner_bank import SEPAY_QR_METHOD
@@ -10,12 +10,6 @@ _logger = logging.getLogger(__name__)
 
 class AccountMove(models.Model):
     _inherit = 'account.move'
-
-    qr_code_method = fields.Selection(
-        compute='_compute_qr_code_method',
-        store=True,
-        readonly=False,
-    )
 
     @api.private
     def _sepay_journal_bank_accounts(self):
@@ -83,19 +77,21 @@ class AccountMove(models.Model):
     def _compute_qr_code_method(self):
         """Pre-select the SePay QR method so the invoice states it up front.
 
-        Core leaves the field empty and resolves a method only while rendering,
-        which both hides the choice from whoever prepares the invoice and makes
-        printing the moment the field is first written. Assignment is skipped
-        when SePay cannot serve this document, so a method chosen by hand for a
-        non-SePay invoice survives.
+        Core takes the QR method the customer prefers. When the customer has no
+        preference and SePay can serve the document, SePay is selected rather
+        than leaving the method to be resolved while printing.
         """
+        super()._compute_qr_code_method()
         for move in self:
+            if move.with_company(move.company_id).commercial_partner_id.qr_code_method:
+                continue
             eligible = move._sepay_wants_qr() and not move.partner_bank_id._get_error_messages_for_qr(
                 SEPAY_QR_METHOD,
                 move.partner_id,
                 move.currency_id,
             )
-            move.qr_code_method = SEPAY_QR_METHOD if eligible else move.qr_code_method
+            if eligible:
+                move.qr_code_method = SEPAY_QR_METHOD
 
     @api.private
     def _sepay_partner_bank(self, silent_errors=True):

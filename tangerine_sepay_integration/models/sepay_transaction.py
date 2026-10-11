@@ -393,7 +393,7 @@ class SePayTransaction(models.Model):
             )
             .filtered(
                 lambda journal: (
-                    self._normalise_account_number(journal.bank_account_id.acc_number)
+                    self._normalise_account_number(journal.bank_account_id.account_number)
                     == normalized
                 ),
             )
@@ -582,7 +582,7 @@ class SePayTransaction(models.Model):
             )
             .filtered(
                 lambda journal: (
-                    self._normalise_account_number(journal.bank_account_id.acc_number)
+                    self._normalise_account_number(journal.bank_account_id.account_number)
                     == account_number
                 ),
             )
@@ -957,12 +957,22 @@ class SePayTransaction(models.Model):
 
     @api.private
     def _link_payment_transaction(self, payment_transaction, payment):
-        """Complete the online transaction with the standard core flow."""
+        """Complete the online transaction with the standard core flow.
+
+        Core only lets a transaction be written by a caller that holds its lock
+        and can roll the update back. Both hold here: the lock is taken below
+        and every transfer is processed inside its own savepoint, with no call
+        to an external service in between.
+        """
         self.ensure_one()
+        payment_transaction.lock_for_update(allow_referencing=True)
+        payment_transaction = payment_transaction.with_context(payment_safe_write=True)
         payment.payment_transaction_id = payment_transaction
-        payment_transaction.payment_id = payment
-        payment_transaction.provider_reference = (
-            self.reference_code or self.webhook_id or self.api_id
+        payment_transaction.write(
+            {
+                'payment_id': payment.id,
+                'provider_reference': self.reference_code or self.webhook_id or self.api_id,
+            },
         )
         payment_transaction._set_done()
         payment_transaction._post_process()
