@@ -1,0 +1,11 @@
+// The image_url widget forces fixed width/height attributes on the <img>,
+// which squashes non-square bank logos. Let both dimensions scale
+// automatically inside a fixed box so logos keep their aspect ratio
+// (smaller is fine, never stretched).
+.o_bank_logo img {
+    width: auto;
+    height: auto;
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+}

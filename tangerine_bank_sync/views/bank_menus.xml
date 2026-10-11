@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--
+        A "Banking" section of the Invoicing / Accounting app gathers the bank
+        master data and, with tangerine_sepay_integration, the incoming bank
+        transactions. It sits at the top level instead of under "Accounting"
+        because that menu is hidden in Community until the full accounting
+        features are enabled, and billing users must still reach their banks.
+    -->
+    <menuitem id="menu_banking"
+              name="Banking"
+              parent="account.menu_finance"
+              sequence="3"
+              groups="account.group_account_invoice,account.group_account_readonly"/>
+
+    <menuitem id="menu_banks"
+              name="Banks"
+              parent="menu_banking"
+              action="base.action_res_bank_form"
+              sequence="10"/>
+
+    <menuitem id="menu_bank_accounts"
+              name="Bank Accounts"
+              parent="menu_banking"
+              action="base.action_res_partner_bank_account_form"
+              sequence="20"/>
+</odoo>
