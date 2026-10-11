@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tangerine.sepay</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='account_digitalization']" position="after">
+                <block title="SePay" id="sepay_settings">
+                    <setting string="SePay Integration"
+                             help="Receive authenticated bank transactions and use SePay QR codes for this company.">
+                        <field name="sepay_enabled"/>
+                        <div class="content-group" invisible="not sepay_enabled">
+                            <div class="row mt8">
+                                <label for="sepay_environment" class="col-lg-5 o_light_label"/>
+                                <field name="sepay_environment"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="sepay_sync_lookback_days" class="col-lg-5 o_light_label"/>
+                                <field name="sepay_sync_lookback_days"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="sepay_activity_user_id" class="col-lg-5 o_light_label"/>
+                                <field name="sepay_activity_user_id"/>
+                            </div>
+                            <div class="row mt8">
+                                <field name="sepay_match_content"/>
+                                <label for="sepay_match_content" class="o_light_label"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Payment QR Codes"
+                             help="SePay QR codes are printed on customer invoices and on the online payment pages."
+                             invisible="not sepay_enabled">
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <field name="sepay_cache_qr_images"/>
+                                <label for="sepay_cache_qr_images" class="o_light_label"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Secrets"
+                             help="Secrets remain in odoo.conf and are never stored in the database.">
+                        <div class="text-muted">
+                            Options <code>sepay_webhook_secret</code> and <code>sepay_api_token</code>,
+                            or <code>sepay_webhook_secret_&lt;company id&gt;</code> and
+                            <code>sepay_api_token_&lt;company id&gt;</code> for one company.
+                            Webhook URL: <code>/webhook/sepay/v1/transactions</code> (JSON, HMAC-SHA256).
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <span class="col-lg-5 o_light_label">Webhook HMAC secret</span>
+                                <field name="sepay_webhook_secret_configured" readonly="1"/>
+                            </div>
+                            <div class="row mt8">
+                                <span class="col-lg-5 o_light_label">API token</span>
+                                <field name="sepay_api_token_configured" readonly="1"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Synchronization and Processing"
+                             help="A webhook only stores the raw transaction. The scheduled action below is what turns it into a payment and a bank transaction.">
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <field name="sepay_auto_process"/>
+                                <label for="sepay_auto_process" class="o_light_label"/>
+                            </div>
+                            <div class="row mt8">
+                                <field name="sepay_auto_sync"/>
+                                <label for="sepay_auto_sync" class="o_light_label"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning mt8" role="alert"
+                             invisible="not sepay_enabled or sepay_auto_process">
+                            <i class="fa fa-exclamation-triangle me-1" title="Warning"/>
+                            Automatic processing is off. Transactions accepted from SePay are
+                            stored but never reach the books until you switch it back on or
+                            press Process pending.
+                        </div>
+                        <button name="action_sepay_sync_now" type="object"
+                                string="Sync now" class="btn-link" icon="fa-refresh"
+                                invisible="not sepay_enabled"/>
+                        <button name="action_sepay_process_pending" type="object"
+                                string="Process pending" class="btn-link" icon="fa-play"
+                                invisible="not sepay_enabled"/>
+                        <div class="content-group" invisible="not sepay_last_sync_at and not sepay_last_sync_error">
+                            <div class="row mt8" invisible="not sepay_last_sync_at">
+                                <label for="sepay_last_sync_at" class="col-lg-5 o_light_label"/>
+                                <field name="sepay_last_sync_at" readonly="1"/>
+                            </div>
+                            <div class="row mt8 text-danger" invisible="not sepay_last_sync_error">
+                                <label for="sepay_last_sync_error" class="col-lg-5 o_light_label"/>
+                                <field name="sepay_last_sync_error" readonly="1"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

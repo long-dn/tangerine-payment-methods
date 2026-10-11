@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Both QR blocks of the invoice report carry id="qrcode_image"; the
+        portal-link one is the only one holding an <a>, so excluding it pins
+        these patches on the bank-transfer QR instead of relying on document
+        order.
+    -->
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='qrcode_image'][not(a)]/p/img[@id='qrcode_odoo_logo']" position="attributes">
+            <attribute name="t-if">o.qr_code_method != 'sepay_qr'</attribute>
+        </xpath>
+        <!--
+            Core sizes its own QR by generating it at 128x128, while SePay
+            serves a 540x540 card that would otherwise print at full size and
+            push the block onto its own page. A max-width caps the SePay image
+            without touching the smaller core one.
+        -->
+        <xpath expr="//div[@id='qrcode_image'][not(a)]/p/img[not(@id)]" position="attributes">
+            <attribute name="style">max-width: 170px;</attribute>
+        </xpath>
+    </template>
+</odoo>

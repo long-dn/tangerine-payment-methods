@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sepay_transaction_view_list" model="ir.ui.view">
+        <field name="name">sepay.transaction.list</field>
+        <field name="model">sepay.transaction</field>
+        <field name="arch" type="xml">
+            <list create="0" delete="0"
+                  decoration-success="state == 'processed'"
+                  decoration-warning="state == 'unmatched'"
+                  decoration-danger="state == 'error'"
+                  decoration-muted="state == 'ignored'">
+                <field name="transaction_date"/>
+                <field name="name"/>
+                <field name="account_number" optional="show"/>
+                <field name="content" optional="show"/>
+                <field name="code" optional="show"/>
+                <field name="transfer_type"/>
+                <field name="amount_signed" sum="Total"/>
+                <field name="source" optional="show"/>
+                <field name="journal_id" optional="show"/>
+                <field name="retry_count" optional="hide"/>
+                <field name="state" widget="badge"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="sepay_transaction_view_form" model="ir.ui.view">
+        <field name="name">sepay.transaction.form</field>
+        <field name="model">sepay.transaction</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" edit="0">
+                <header>
+                    <button name="action_process" type="object" string="Process"
+                            class="btn-primary" groups="account.group_account_manager"
+                            invisible="state != 'received'"/>
+                    <button name="action_retry" type="object" string="Retry"
+                            class="btn-primary" groups="account.group_account_manager"
+                            invisible="state not in ('unmatched', 'error', 'ignored')"/>
+                    <button name="action_ignore" type="object" string="Ignore"
+                            groups="account.group_account_manager"
+                            confirm="This transfer will be closed without any accounting entry. Its bank transaction stays available for reconciliation. Continue?"
+                            invisible="state in ('processed', 'ignored')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="received,processed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group name="source_details">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="transaction_date"/>
+                            <field name="source"/>
+                            <field name="webhook_id" invisible="not webhook_id"/>
+                            <field name="api_id" invisible="not api_id"/>
+                            <field name="reference_code"/>
+                        </group>
+                        <group name="bank_details">
+                            <field name="gateway"/>
+                            <field name="account_number"/>
+                            <field name="sub_account"/>
+                            <field name="transfer_type"/>
+                            <field name="amount_signed"/>
+                            <field name="accumulated"/>
+                        </group>
+                    </group>
+                    <group string="Matching" name="matching">
+                        <group name="matching_input">
+                            <field name="code"/>
+                            <field name="content"/>
+                            <field name="description"/>
+                        </group>
+                        <group name="matching_result">
+                            <field name="journal_id"/>
+                            <field name="bank_statement_line_id"/>
+                            <field name="payment_id"/>
+                            <field name="payment_transaction_id"/>
+                            <field name="sale_order_id"/>
+                            <field name="invoice_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group string="Processing Note" name="processing_note" invisible="not error_message">
+                        <field name="error_message" nolabel="1"/>
+                    </group>
+                    <notebook groups="account.group_account_manager">
+                        <page string="Source Data" name="source_data">
+                            <group name="audit">
+                                <field name="dedup_key"/>
+                                <field name="transaction_date_source"/>
+                                <field name="retry_count"/>
+                                <field name="processed_at"/>
+                            </group>
+                            <field name="raw_webhook_payload" invisible="not raw_webhook_payload"/>
+                            <field name="webhook_payload" invisible="not webhook_payload"/>
+                            <field name="api_payload" invisible="not api_payload"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="sepay_transaction_view_search" model="ir.ui.view">
+        <field name="name">sepay.transaction.search</field>
+        <field name="model">sepay.transaction</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="content"/>
+                <field name="account_number"/>
+                <filter name="needs_action" string="Needs Action"
+                        domain="[('state', 'in', ['received', 'unmatched', 'error'])]"/>
+                <separator/>
+                <filter name="received" string="Received" domain="[('state', '=', 'received')]"/>
+                <filter name="needs_review" string="Needs Review" domain="[('state', '=', 'unmatched')]"/>
+                <filter name="error" string="Error" domain="[('state', '=', 'error')]"/>
+                <filter name="processed" string="Processed" domain="[('state', '=', 'processed')]"/>
+                <filter name="ignored" string="Ignored" domain="[('state', '=', 'ignored')]"/>
+                <separator/>
+                <filter name="incoming" string="Incoming" domain="[('transfer_type', '=', 'in')]"/>
+                <filter name="outgoing" string="Outgoing" domain="[('transfer_type', '=', 'out')]"/>
+                <separator/>
+                <filter name="filter_transaction_date" string="Transaction Date"
+                        date="transaction_date"/>
+                <group>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="group_journal" string="Bank Journal" context="{'group_by': 'journal_id'}"/>
+                    <filter name="group_date" string="Transaction Date" context="{'group_by': 'transaction_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sepay_transactions" model="ir.actions.act_window">
+        <field name="name">SePay Transactions</field>
+        <field name="res_model">sepay.transaction</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="sepay_transaction_view_search"/>
+        <!--
+            `received` is the state a transfer sits in when nothing processes
+            it, so filtering on `unmatched` alone would hide exactly the
+            failure an accountant has to notice.
+        -->
+        <field name="context">{'search_default_needs_action': 1}</field>
+    </record>
+
+    <menuitem id="menu_sepay_transactions"
+              name="SePay Transactions"
+              parent="tangerine_bank_sync.menu_banking"
+              action="action_sepay_transactions"
+              sequence="30"
+              groups="account.group_account_invoice,account.group_account_readonly"/>
+</odoo>

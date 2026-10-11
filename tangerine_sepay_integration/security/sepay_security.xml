@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Global rule: in Community an accounting administrator is not always a
+        member of "Show Full Accounting Features", so a group-bound rule would
+        let some readers see every company's bank transactions.
+    -->
+    <record id="sepay_transaction_company_rule" model="ir.rule">
+        <field name="name">SePay transactions by allowed company</field>
+        <field name="model_id" ref="model_sepay_transaction"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
